@@ -1,0 +1,14 @@
+{
+  "name": "bank-system",
+  "version": "1.0.0",
+  "description": "This is bank system done as a project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ChamathJ",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
