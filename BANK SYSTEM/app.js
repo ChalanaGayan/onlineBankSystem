@@ -11,18 +11,27 @@ app.get("/",(req,res)=>{
 });
 
 app.get("/customer-login",function(req,res){
-    res.sendFile(__dirname+"/bank services/login/customerlogininform.html");
+    res.sendFile(__dirname+"/public/customer_login/customer-login.html");
+});
+
+app.get("/employee-login",function(req,res){
+    res.sendFile(__dirname+"/public/employee_login/employee-login.html");
 });
 
 app.post("/employee-login", function(req, res) {
-    const username = req.body.username;
-    const password = req.body.password;
+    // const username = req.body.username;
+    // const password = req.body.password;
+
+    const username = chalana;
+    const password = gayan;
+
+
 
     // Here you can query your database to check if the username and password match
     // Assuming you have a database connection and a table named "employees"
     // You can use a library like "mysql" to connect to your database
     // Here's an example of how you can check if the username and password match
-    const query = "SELECT * FROM employees WHERE username = ? AND password = ?";
+    const query = "SELECT * FROM employees WHERE username = 'chalana' AND password = 'gayan'";
     db.query(query, [username, password], function(err, result) {
         if (err) {
             console.log(err);

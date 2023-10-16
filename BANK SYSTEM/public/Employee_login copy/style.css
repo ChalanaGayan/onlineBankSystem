@@ -145,6 +145,11 @@ section .signin .content .form .inputBox i
   color: #fff;
   text-decoration: none;
 }
+.signin .content .form .links a:hover 
+{
+  color: #1e18d0;
+  text-decoration: underline;
+}
 .signin .content .form .links a:nth-child(2)
 {
   color: #0f0;
