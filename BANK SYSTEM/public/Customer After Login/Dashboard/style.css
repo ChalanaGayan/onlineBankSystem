@@ -13,18 +13,30 @@
   --grey-color-light: #aaa;
 }
 body {
-  background-color: #e7f2fd;
-  transition: all 0.5s ease;
+  background-color: #bab4b4;
+  background-image: url("office-buildings.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
 }
-body.dark {
-  background-color: #333;
+/* section -1 */
+
+.headline{
+
+  color: #4070f4;
+  font-size: 6rem;
+  font-weight: bold;
+  margin-top: 40% ;
+  margin-left: 20%;
+  background-color: #f0f0f0; /* Background color for the box */
+  padding: 20px; /* Adjust the padding to your preference */
+  display: inline-block
+
 }
-body.dark {
-  --white-color: #333;
-  --blue-color: #fff;
-  --grey-color: #f2f2f2;
-  --grey-color-light: #aaa;
-}
+
+
 
 /* navbar */
 .navbar {
@@ -32,7 +44,7 @@ body.dark {
   top: 0;
   width: 100%;
   left: 0;
-  background-color: var(--white-color);
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,7 +95,7 @@ body.dark {
 
 /* sidebar */
 .sidebar {
-  background-color: var(--white-color);
+  background-color: black;
   width: 260px;
   position: fixed;
   top: 0;
@@ -220,7 +232,7 @@ body.dark {
   width: 100%;
   color: var(--grey-color);
   border-top: 1px solid var(--grey-color-light);
-  background-color: var(--white-color);
+  background-color: black;
 }
 .bottom i {
   font-size: 20px;
@@ -257,5 +269,12 @@ body.dark {
   }
   .sidebar.close .bottom_content {
     left: -100%;
+  }
+  .navbar_content{
+    display: none;
+  }
+  .headline{
+    position: absolute;
+    bottom: 20px;
   }
 }
