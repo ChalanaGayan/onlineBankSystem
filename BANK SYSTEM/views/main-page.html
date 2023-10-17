@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">  
+    <meta name="description" content="This is the group project of Database & Management System">  
+    <meta name="author" content="Neranjan Pushpakumara">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    
+    <title>DPRJ Bank</title>
+</head>
+<body>
+    
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <a href="#section-1"><img class="logo-image" src="/bank pic/logo.png" alt="bank logo" ></a>
+      <ul>
+        <li><a class="active links" href="#section-1">Home</a></li>
+        <li><a class="links" href="#">About</a></li>
+        <li><a class="links" href="#section-2">Services</a></li>
+        <li><a class="links" href="#section-3">Exchange Rates</a></li>
+        <li><a class="links" href="#section-4">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="section-1">
+        <div id = "welcome-sec">
+            <h1 id ="welcome-text">WELCOME TO DPRJ BANK</h1>
+            <p id="welcome-para">Our bank is the best bank in the world. We are providing the best services for our customers.</p>
+            <button  class="btn btn-primary "><a id ="more-button" href=""> Learn More</a></button>
+            <div class="login">
+                <form style="float:left" action="/customer-login" method="get" id="customer-login-direct">
+                  <button  class="btn btn-primary" type="submit" form="customer-login-direct"> Customer Login </button>
+                </form>
+                <form style="float:left" action="/employee-login" method="get">
+                  <button  class="btn btn-primary" type="submit"> Employee Login </button>
+                </form>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id ="section-2">
+
+        <h2 class="headline ">Products and services to make banking easy</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4 cards">
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card h-100">
+                <form id="savings-form" action="/savings" method="get">
+                <a onclick="document.getElementById('savings-form').submit()"><img src="	https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4940/media-230528021902.jpg" class="card-img-top" alt="savings"></a>
+                </form>
+                <div class="card-body">
+                  <h5 class="card-title">Saving Accounts</h5>
+                  <ul>
+                    <li>Easy access to your money</li>
+                    <li>Competitive interest rates</li>
+                    <li>Free online banking</li>
+                    <li>Free mobile banking</li>
+                    <li>Free eStatements</li>
+                  </ul>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted"><a class="more-tag" href="/Bank services/savings/saving.html">more...></a></small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card h-100">
+                <a href="/Bank services/current accounts/current_accounts.html"><img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4943/media-230528022004.jpg" class="card-img-top" alt="current"></a>
+                <div class="card-body">
+                  <h5 class="card-title">Current Accounts</h5>
+                  <ul>
+                    <li>Easy access to your money</li>
+                    <li>Competitive interest rates</li>
+                    <li>Free online banking</li>
+                    <li>Free mobile banking</li>
+                    <li>Free eStatements</li>
+                  </ul>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted"><a class="more-tag" href="/Bank services/current accounts/current_accounts.html">more...></a></small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card h-100">
+                  <a href="/Bank services/term depositd/term_deposits.html"><img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4946/media-230528022056.jpg" class="card-img-top" alt="FD"></a>
+                  <div class="card-body">
+                    <h5 class="card-title">Term Deposits</h5>
+                    <ul>
+                        <li>Guaranteed returns </li>
+                        <li>Flexible terms & maturity options</li>
+                        <li>Secure & low-risk investment</li>
+                        <li>Option for automatic renewal</li>
+                        <li>Fixed interest rate </li>
+                    </ul>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted"><a class="more-tag" href="/Bank services/term depositd/term_deposits.html">more...></a></small>
+                  </div>
+                </div>
+              </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card h-100">
+                <a href="/Bank services/loans/loan.html"><img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4955/media-230528023059.jpg" class="card-img-top" alt="Loan">
+                    <div class="card-body"></a>
+                  <h5 class="card-title">Loans</h5>
+                    <ul>
+                        <li>Personalized repayment plans</li>
+                        <li>No prepayment penalties</li>
+                        <li>Flexible loan options</li>
+                        <li>Fast approval and funding</li>
+                        <li>Online account management</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted"><a class="more-tag" href="/Bank services/loans/loan.html">more...></a></small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+    </section>
+    
+    <section id="section-3">
+        <h2 class="headline ">Currency Exchange Rates</h2>
+        <div class="wrapper">
+            <header>Currency Exchange</header>
+            <form action="#" id="exchange-rate-form">
+              <div class="amount">
+                <p>Enter Amount</p>
+                <input type="text" value="1">
+              </div>
+              <div class="drop-list">
+                <div class="from">
+                  <p>From</p>
+                  <div class="select-box">
+                    <img src="https://flagcdn.com/48x36/us.png" alt="flag">
+                    <select> <!-- Options tag are inserted from JavaScript --> </select>
+                  </div>
+                </div>
+                <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                <div class="to">
+                  <p>To</p>
+                  <div class="select-box">
+                    <img src="https://flagcdn.com/48x36/af.png" alt="flag">
+                    <select> <!-- Options tag are inserted from JavaScript --> </select>
+                  </div>
+                </div>
+              </div>
+              <div class="exchange-rate">Getting exchange rate...</div>
+              <button style="background-color:#0d6efd; ">Get Exchange Rate</button>
+            </form>
+            
+          </div>
+      
+          <script src="/scripts/country-list.js"></script>
+          <script src="/scripts/script.js"></script>
+    </section>
+
+
+  </body>
+<footer>
+    <section id ="section-4">
+    
+    <div class="contact-container ">
+        
+        <div class="form-container  ">
+            
+            <form action="" class="form-container">
+
+                <h2 class="headline">Contact Us</h2>
+                <div class="input-group">
+                    <input type="text" placeholder="Name" required>                       
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="input-group">
+                    <textarea placeholder="Message" required></textarea>
+                </div>
+                <div class="input-group">
+                   <button class="btn btn-primary ">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7874587633573!2d79.89968427456903!3d6.7956951199413025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2454186608f23%3A0x1e4a36ca98dbbb88!2sUniversity%20of%20Moratuwa%2C%20Moratuwa%2010400!5e0!3m2!1sen!2slk!4v1696600695818!5m2!1sen!2slk"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+        <div >
+           
+        </div>
+    </div>
+  </section>
+</footer>
+
+</html>
