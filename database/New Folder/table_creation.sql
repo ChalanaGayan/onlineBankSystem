@@ -118,7 +118,7 @@ CREATE TABLE Withdrawals (
 );
 
 CREATE TABLE Transfers (
-  Transfer_ID INT,
+  Transfer_ID INT ,
   Transfer_Time TIMESTAMP,
   Trans_Amount DECIMAL(12,2),
   From_Acc VARCHAR(15),
