@@ -23,6 +23,18 @@ router.get("/forget-password",function(req,res){
     res.render("forget-password");
 });
 
+router.get("/current_accounts",function(req,res){
+    res.render("current_accounts");
+});
+
+router.get("/loan",function(req,res){
+    res.render("loan");
+});
+
+router.get("/term_deposits",function(req,res){
+    res.render("/term_deposits");
+});
+
 router.post("/customer-login",function(req,res){
     query.checkUser(req,res);
 });

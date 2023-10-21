@@ -72,7 +72,12 @@
                   </ul>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted"><a class="more-tag" href="/Bank services/savings/saving.html">more...></a></small>
+                  
+                  <!-- <small class="text-muted" ><a class="more-tag" >more...></a></small> -->
+                  <button class="btn btn-primary"><a id="more-button" href="#" onclick="document.getElementById('savings-form').submit()">Learn More</a></button>
+                  <form id="savings-form" action="/savings" method="post" style="display:none;"></form>
+                  
+                
                 </div>
               </div>
             </div>
@@ -91,7 +96,11 @@
                   </ul>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted"><a class="more-tag" href="/Bank services/current accounts/current_accounts.html">more...></a></small>
+                  <!-- change this -->
+                  <!-- <small class="text-muted"><a class="more-tag" href="/Bank services/current accounts/current_accounts.html">more...></a></small> -->
+                    <button class="btn btn-primary"><a id="more-button" href="#" onclick="document.getElementById('current-accounts-form').submit()">Learn More</a></button>
+                    <form id="current-accounts-form" action="current_accounts" method="get" style="display:none;"></form>
+                
                 </div>
               </div>
             </div>
@@ -110,7 +119,11 @@
                     </ul>
                   </div>
                   <div class="card-footer">
-                    <small class="text-muted"><a class="more-tag" href="/Bank services/term depositd/term_deposits.html">more...></a></small>
+                    <!-- change this -->
+                    <!-- <small class="text-muted"><a class="more-tag" href="/Bank services/term depositd/term_deposits.html">more...></a></small> -->
+                    <button class="btn btn-primary"><a id="more-button" href="#" onclick="document.getElementById('term-deposits-form').submit()">Learn More</a></button>
+                    <form id="savings-form" action="/term_deposits" method="post" style="display:none;"></form>
+                  
                   </div>
                 </div>
               </div>
@@ -129,7 +142,11 @@
                     </ul>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted"><a class="more-tag" href="/Bank services/loans/loan.html">more...></a></small>
+                  <!-- change this -->
+                  <!-- <small class="text-muted"><a class="more-tag" href="/Bank services/loans/loan.html">more...></a></small> -->
+                  <button class="btn btn-primary"><a id="more-button" href="#" onclick="document.getElementById('loan-form').submit()">Learn More</a></button>
+                  <form id="savings-form" action="/loan" method="post" style="display:none;"></form>
+                
                 </div>
               </div>
             </div>
