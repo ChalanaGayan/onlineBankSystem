@@ -8,7 +8,6 @@
     border-radius: calc(0.75rem - 1px) calc(0.75rem - 1px) 0 0;
     text-align: center;
 }
-
 .bg-surface-secondary {
     background-color: #3e505e !important;
 }
