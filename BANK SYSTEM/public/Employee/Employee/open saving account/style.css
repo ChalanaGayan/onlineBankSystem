@@ -1,0 +1,237 @@
+
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+.card-header:first-child {
+    border-radius: calc(0.75rem - 1px) calc(0.75rem - 1px) 0 0;
+    text-align: center;
+}
+
+.bg-surface-secondary {
+    background-color: #3e505e !important;
+}
+.ls-tight{
+    padding-bottom: 20px;
+    color: blue;
+}
+.bg-surface-primary{
+    background-color: rgb(26, 33, 41) !important
+}
+
+.navbar [class^=container] {
+    position: relative;
+    background-color:rgb(26, 33, 41);
+}
+.navbar-light .navbar-nav .nav-link {
+    color: blue;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: blue;
+}
+
+.navbar-vertical.navbar-light {
+    background-color: gray;
+    border-color: black;
+}
+
+
+.card-header {
+    background-color:rgb(112 175 255);
+}
+tbody{
+    background-color: #cde8ff;
+
+}
+.card{
+    border-radius: 1rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    border-radius: 1rem;
+    padding: 1.5rem 1.5rem;
+    color: #525f7f;
+    background-color: lightsteelblue;
+   
+}
+
+.text-muted {
+    --x-text-opacity: 1;
+    color: black !important;
+}
+.table .thead-light th {
+    background-color: #f5f9fc;
+    color: black;
+}
+.py-3 {
+    padding-top: 0.0rem !important;
+    padding-bottom: 0.0rem !important;
+    
+}
+.px-0 {
+    padding-right: 1px !important;
+    padding-left: 0 !important;
+
+}
+@media (min-width: 992px){
+    .navbar-vertical.navbar-expand-lg.show {
+        max-width: 205px;
+        border-radius: 0;
+    }
+}
+
+/* form */
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+	background:black 
+		
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+}
+/*form styles*/
+#msform {
+	width: 550px;
+	margin: 60px auto;
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px;
+	margin: 10px 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+
+
+
+/* drop down for loan type */
+
+.custom-select {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.custom-select label {
+    margin-bottom: 5px;
+    font-weight: lighter;
+    font-family: 'montserrat';
+    font-size: 13px;
+}
+
+.custom-select input, .custom-select select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+    font-family: 'montserrat';
+}
+
