@@ -120,8 +120,8 @@
               <h2>Add Users</h2>
               <div class="form">
                 <div class="card space icon-relative">
-                  <label class="label">User ID</label>
-                  <input type="text" class="input" placeholder="User ID">
+                  <label class="label">Branch ID</label>
+                  <input type="text" class="input" placeholder="Branch ID">
                  
                 </div>
                 <div class="card space icon-relative">
@@ -130,9 +130,29 @@
                  
                 </div>
                 <div class="card space icon-relative">
-                    <label class="label">Email</label>
-                    <input type="text" class="input"  placeholder="Email">
+                    <label class="label">Password</label>
+                    <input type="password" class="input"  placeholder="Password">
                    
+                </div>
+                <div class="form">
+                  <div class="card space icon-relative">
+                    <label class="label">NIC</label>
+                    <input type="text" class="input" placeholder="NIC Number">
+                  </div>
+                  <div class="card space icon-relative">
+                    <label class="label">Contact No</label>
+                    <input type="text" class="input"  placeholder="Phone Number">
+                  </div>
+                  <div class="card space icon-relative">
+                      <label class="label">Email</label>
+                      <input type="text" class="input"  placeholder="Email"> 
+                  </div>
+                  <div class="custom-select">
+                    <label for="loanType">Gender   </label>
+                    <select name="loanType" id="loanType">
+                        <option value="personal">Male</option>
+                        <option value="home">Female</option>
+                    </select>
                 </div>
                 <div class="btn">
                     <button type="button" onclick="showSweetAlert()" >
