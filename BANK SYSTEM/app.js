@@ -17,12 +17,11 @@ const port = 3000; // A reminder to change this to environment variables before 
 // Setup static files folder
 app.use(express.static("public"));
 
-const auth = require("./routes/auth");
-
 // Link to routes
 app.use("/",require("./routes/pages"));
 app.use("/",require("./routes/modify"));
-app.use("/customer-dashboard/",auth.authUser,require("./routes/dashboard"));
+app.use("/customer-dashboard/",require("./routes/customer-dashboard"));
+app.use("/employee-dashboard/",require("./routes/employee-dashboard"));
 
 
 

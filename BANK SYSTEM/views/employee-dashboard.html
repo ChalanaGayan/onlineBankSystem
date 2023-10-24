@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Term Deposits</title>
-  <link rel="stylesheet" href="\Customer After Login\Dashboard\Term Deposits\style.css">
+  <title>Employee Dashboard</title>
+  <link rel="stylesheet" href="\Employee\Employee\employee dashboard\style.css">
   <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-  <style>
-    .pages:hover{
-        cursor: pointer;
-    }
-  </style>
 </head>
 
 <body>
@@ -46,41 +41,35 @@
             <div class="collapse navbar-collapse" id="sidebarCollapse">
                 <!-- Navigation -->
                 <ul class="navbar-nav">
-                    <li class="nav-item pages">
-                        <form action="/customer-dashboard" method="get" id="dashboard"></form>
-                        <a class="nav-link" onclick="document.getElementById('dashboard').submit()">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <i class="bi bi-house"></i> Dashboard
                         </a>
                     </li>
-                    <li class="nav-item pages" >
-                        <form action="/customer-dashboard/savings-account" method="get" id="savings"></form>
-                        <a class="nav-link" onclick="document.getElementById('savings').submit()">
-                            <i class="bi bi-coin"></i> Saving Accounts
-                        </a>
-                        
-                    </li>
-                    <li class="nav-item pages">
-                        <form action="/customer-dashboard/current-account" method="get" id="current"></form>
-                        <a class="nav-link" onclick="document.getElementById('current').submit()">
-                            <i class="bi bi-cash-coin"></i> Current Accounts
+                    <li class="nav-item">
+                        <a class="nav-link" href="saving accounts/saving_accounts.html">
+                            <i class="bi bi-people-fill"></i> Open Saving Accounts
                         </a>
                     </li>
-                    <li class="nav-item pages">
-                        <form action="/customer-dashboard/transactions" method="get" id="transactions"></form>
-                        <a class="nav-link" onclick="document.getElementById('transactions').submit()">
-                            <i class="bi bi-cash-stack"></i> Transactions
+                    <li class="nav-item">
+                        <a class="nav-link" href="current accounts/Current_accounts.html">
+                            <i class="bi bi-person-add"></i> Open Current Accounts
                         </a>
                     </li>
-                    <li class="nav-item pages">
-                        <form action="/customer-dashboard/loans" method="get" id="loans"></form>
-                        <a class="nav-link" onclick="document.getElementById('loans').submit()">
-                            <i class="bi bi-wallet-fill"></i> Loans
+                    <li class="nav-item">
+                        <a class="nav-link" href="Transections/Transection.html">
+                            <i class="bi bi-list-check"></i> Open FD Plans
                         </a>
                     </li>
-                    <li class="nav-item pages">
-                        <form action="/customer-dashboard/fixed-deposit" method="get" id="term-deposits"></form>
-                        <a class="nav-link" onclick="document.getElementById('term-deposits').submit()">
-                            <i class="bi bi-briefcase-fill"></i> Term Deposits
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-list"></i> Open Loans
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-journal-check"></i> Onlin.Req. Loans 
+                            <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto"> 10</span>
                         </a>
                     </li>
                 </ul>
@@ -91,12 +80,11 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <i class="bi bi-person-square"></i> {{user}}
+                            <i class="bi bi-person-square"></i> Account
                         </a>
                     </li>
                     <li class="nav-item">
-                        <form action="/customer-dashboard/logout" method="get" id="logout"></form>
-                        <a class="nav-link" onclick="document.getElementById('logout').submit();">
+                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
                             <i class="bi bi-box-arrow-left"></i> Logout
                         </a>
                     </li>
@@ -114,7 +102,7 @@
                         <div class="col-sm-6 col-12 mb-4 mb-sm-0">
                             <!-- Title -->
                             <h1 class="h2 mb-0 ls-tight">
-                                <img src="\Customer After Login\Dashboard\Term Deposits\logo.png" width="40"> Digital Banking With DPRJ Bank </h1>
+                                <img src="\Employee\Employee\employee dashboard\logo.png" width="40"> Digital Banking With DPRJ Bank </h1>
                         </div>
                     </div>
                     <!-- Nav -->
@@ -122,43 +110,18 @@
             </div>
         </header>
         <!-- Main -->
-
-        <div id="headline">
-            <h1 style="text-align: center; padding:5% ;font-weight:bold">FD Details</h1>
-        </div>
-        <div class="card border-primary mb-3" style="max-width: 22rem; margin: auto;">
-            <div class="card-header">FD Name</div>
-            <div class="card-body text-primary">
-                <table>
-                    <tr>
-                        <td>Amount</td>
-                        <td>LKR 25000000.00</td>
-                    </tr>
-                    <tr>
-                        <td>Time Duration</td>
-                        <td>2 years</td>
-                    </tr>
-                    <tr>
-                        <td>Interest Rate per annum  </td>
-                        <td>15%</td>
-                    </tr>
-                    <tr>
-                        <td>Opening Date</td>
-                        <td>2023/03/13</td>
-                    </tr>
-                    <tr>
-                        <td>Closing Date</td>
-                        <td>2023/03/13</td>
-                    </tr>
-                </table>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 3%;">
+            <div style="background-color: rgb(26, 33, 41); padding: 10px; border-radius: 20px;">
+                <img src="\Employee\Employee\employee dashboard\logo.png" alt="logo" style="max-width: 100%; height: auto; display: block;">
+            </div>
+            <div style="background-color: rgb(26, 33, 41); padding: 10px;margin-top:3% ;border-radius: 15px;">
+                <h2 style="color: white;">"Empowering Progress, One Customer at a Time."</h2>
             </div>
         </div>
-        
 
+    </div>
 </div>
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="\Customer After Login\Dashboard\Term Deposits\script.js"></script>
+  <script src="\Employee\Employee\employee dashboard\script.js"></script>
 </body>
 </html>
