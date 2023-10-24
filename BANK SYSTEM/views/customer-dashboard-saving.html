@@ -46,8 +46,9 @@
             <div class="collapse navbar-collapse" id="sidebarCollapse">
                 <!-- Navigation -->
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
+                    <li class="nav-item pages">
+                        <form action="/customer-dashboard" method="get" id="dashboard"></form>
+                        <a class="nav-link" onclick="document.getElementById('dashboard').submit()">
                             <i class="bi bi-house"></i> Dashboard
                         </a>
                     </li>
@@ -94,7 +95,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
+                        <form action="/customer-dashboard/logout" method="get" id="logout"></form>
+                        <a class="nav-link" onclick="document.getElementById('logout').submit();">
                             <i class="bi bi-box-arrow-left"></i> Logout
                         </a>
                     </li>

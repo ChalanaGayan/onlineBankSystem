@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customer Dashboard</title>
-  <link rel="stylesheet" href="\Customer After Login\Dashboard/style.css">
+  <title>Late Loans Installment Report</title>
+  <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-  <style>
-    .pages:hover{
-        cursor: pointer;
-    }
-  </style>
 </head>
 
 <body>
@@ -46,40 +41,35 @@
             <div class="collapse navbar-collapse" id="sidebarCollapse">
                 <!-- Navigation -->
                 <ul class="navbar-nav">
-                    <li class="nav-item pages">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="bi bi-house"></i> Dashboard
                         </a>
                     </li>
-                    <li class="nav-item pages" >
-                        <form action="/customer-dashboard/savings-account" method="get" id="savings"></form>
-                        <a class="nav-link" onclick="document.getElementById('savings').submit()">
-                            <i class="bi bi-coin"></i> Saving Accounts
-                        </a>
-                        
-                    </li>
-                    <li class="nav-item pages">
-                        <form action="/customer-dashboard/current-account" method="get" id="current"></form>
-                        <a class="nav-link" onclick="document.getElementById('current').submit()">
-                            <i class="bi bi-cash-coin"></i> Current Accounts
+                    <li class="nav-item">
+                        <a class="nav-link" href="saving accounts/saving_accounts.html">
+                            <i class="bi bi-people-fill"></i> Working Employees
                         </a>
                     </li>
-                    <li class="nav-item pages">
-                        <form action="/customer-dashboard/transactions" method="get" id="transactions"></form>
-                        <a class="nav-link" onclick="document.getElementById('transactions').submit()">
-                            <i class="bi bi-cash-stack"></i> Transactions
+                    <li class="nav-item">
+                        <a class="nav-link" href="current accounts/Current_accounts.html">
+                            <i class="bi bi-person-add"></i> Add Employees
                         </a>
                     </li>
-                    <li class="nav-item pages">
-                        <form action="/customer-dashboard/loans" method="get" id="loans"></form>
-                        <a class="nav-link" onclick="document.getElementById('loans').submit()">
-                            <i class="bi bi-wallet-fill"></i> Loans
+                    <li class="nav-item">
+                        <a class="nav-link" href="Transections/Transection.html">
+                            <i class="bi bi-list-check"></i> Transactions
                         </a>
                     </li>
-                    <li class="nav-item pages">
-                        <form action="/customer-dashboard/fixed-deposit" method="get" id="term-deposits"></form>
-                        <a class="nav-link" onclick="document.getElementById('term-deposits').submit()">
-                            <i class="bi bi-briefcase-fill"></i> Term Deposits
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-list"></i> Late Loans
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-journal-check"></i> Loan Approvals
+                            <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span>
                         </a>
                     </li>
                 </ul>
@@ -90,12 +80,11 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <i class="bi bi-person-square"></i> {{user}}
+                            <i class="bi bi-person-square"></i> Account
                         </a>
                     </li>
                     <li class="nav-item">
-                        <form action="/customer-dashboard/logout" method="get" id="logout"></form>
-                        <a class="nav-link" onclick="document.getElementById('logout').submit();">
+                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
                             <i class="bi bi-box-arrow-left"></i> Logout
                         </a>
                     </li>
@@ -113,7 +102,7 @@
                         <div class="col-sm-6 col-12 mb-4 mb-sm-0">
                             <!-- Title -->
                             <h1 class="h2 mb-0 ls-tight">
-                                <img src="Customer After Login\Dashboard\logo.png" width="40"> Digital Banking With DPRJ Bank </h1>
+                                <img src="logo.png" width="40"> Digital Banking With DPRJ Bank </h1>
                         </div>
                     </div>
                     <!-- Nav -->
@@ -124,113 +113,20 @@
         <main class="py-6 bg-surface-secondary">
             <div class="container-fluid">
                 <!-- Card stats -->
-                <div class="row g-6 mb-6">
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Capital</span>
-                                        <span class="h3 font-bold mb-0">LKR 11590.90</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
-                                            <i class="bi bi-wallet-fill"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-success text-success me-2">
-                                        <i class="bi bi-arrow-up me-1"></i>37%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">This month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Withdrawals</span>
-                                        <span class="h3 font-bold mb-0">12</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
-                                            <i class="bi bi-cash-coin"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-success text-success me-2">
-                                        <i class="bi bi-arrow-up me-1"></i>27%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">This month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Deposits</span>
-                                        <span class="h3 font-bold mb-0">10</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
-                                            <i class="bi bi-coin"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                                        <i class="bi bi-arrow-down me-1"></i>-5%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">This month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Liabilities</span>
-                                        <span class="h3 font-bold mb-0">LKR 10000.00</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
-                                            <i class="bi bi-minecart-loaded"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-success text-success me-2">
-                                        <i class="bi bi-arrow-up me-1"></i>10%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">This month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="card shadow border-0 mb-7">
                     <div class="card-header">
-                        <h5 class="mb-0">Last 10 Transactions</h5>
+                        <h5 class="mb-0">Late Loans Installment Report</h5>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-hover table-nowrap">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">From</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">To</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">time</th>
+                                    <th scope="col">Loan ID</th>
+                                    <th scope="col">Loan Type</th>
+                                    <th scope="col">Installment</th>
+                                    <th scope="col">Expected Inst.Date</th>
+                                    <th scope="col">Late Fee</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -238,27 +134,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -267,27 +163,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -296,27 +192,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -325,27 +221,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -354,27 +250,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -383,27 +279,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -412,27 +308,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -441,27 +337,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -470,27 +366,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -499,27 +395,27 @@
                                 <tr>
                                     <td>
                                         <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                            1234
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2023
+                                        personal loan
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            11111111111111
+                                            LKR 80,000.00
                                         </a>
                                     </td>
                                     <td>
-                                        LKR 3.500
+                                        2015/04/03
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            02:30:40 PM
+                                            LKR 5000.00
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                        
                                         <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -534,6 +430,6 @@
     </div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="\Customer After Login\Dashboard\script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
