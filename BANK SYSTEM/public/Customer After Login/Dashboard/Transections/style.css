@@ -1,0 +1,214 @@
+
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+
+
+.bg-surface-secondary {
+    background-color: #3e505e !important;
+}
+.ls-tight{
+    padding-bottom: 20px;
+    color: blue;
+}
+.bg-surface-primary{
+    background-color: rgb(26, 33, 41) !important
+}
+
+.navbar [class^=container] {
+    position: relative;
+    background-color:rgb(26, 33, 41);
+}
+.navbar-light .navbar-nav .nav-link {
+    color: blue;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: blue;
+}
+
+.navbar-vertical.navbar-light {
+    background-color: gray;
+    border-color: black;
+}
+
+
+.card-header {
+    background-color:rgb(112 175 255);
+}
+tbody{
+    background-color: #cde8ff;
+
+}
+.card{
+    border-radius: 1rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    border-radius: 1rem;
+    padding: 1.5rem 1.5rem;
+    color: #525f7f;
+    background-color: lightsteelblue;
+   
+}
+
+.text-muted {
+    --x-text-opacity: 1;
+    color: black !important;
+}
+.table .thead-light th {
+    background-color: #f5f9fc;
+    color: black;
+}
+.py-3 {
+    padding-top: 0.0rem !important;
+    padding-bottom: 0.0rem !important;
+    
+}
+.px-0 {
+    padding-right: 1px !important;
+    padding-left: 0 !important;
+
+}
+@media (min-width: 992px){
+    .navbar-vertical.navbar-expand-lg.show {
+        max-width: 205px;
+        border-radius: 0;
+    }
+}
+
+
+/* payment  */
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Ubuntu');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+.payment{
+  background: #f8f8f8;
+  max-width: 360px;
+  margin: 80px auto;
+  height: auto;
+  padding: 35px;
+  padding-top: 70px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.payment h2{
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: #0d3c61;
+}
+
+.form .label{
+  display: block;
+  color: #555555;
+  margin-bottom: 6px;
+}
+
+.input{
+  padding: 13px 0px 13px 25px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #dddddd;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  outline: none;
+  font-size: 16px;
+  color: #555555;
+}
+
+.card-grp{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-item{
+  width: 48%;
+}
+
+.space{
+  margin-bottom: 20px;
+}
+
+.icon-relative{
+  position: relative;
+}
+
+.icon-relative .fas,
+.icon-relative .far{
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+  font-size: 20px;
+  color: #555555;
+}
+
+.btn{
+  margin-top: 40px;
+  background: #2196F3;
+  padding: 12px;
+  text-align: center;
+  color: #f8f8f8;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+  margin-left: 25%;
+}
+
+
+.payment-logo{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: #f8f8f8;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  text-align: center;
+  line-height: 85px;
+}
+
+.payment-logo:before{
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 90px;
+  height: 90px;
+  background: #2196F3;
+  border-radius: 50%;
+}
+
+.payment-logo p{
+  position: relative;
+  color: #f8f8f8;
+  font-family: 'Baloo Bhaijaan', cursive;
+  font-size: 58px;
+}
+
+
+@media screen and (max-width: 420px){
+  .card-grp{
+    flex-direction: column;
+  }
+  .card-item{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .btn{
+    margin-top: 20px;
+  }
+}

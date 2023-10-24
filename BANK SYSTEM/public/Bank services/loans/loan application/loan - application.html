@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <title>Loan application</title>
+</head>
+<body>
+        <!-- multistep form -->
+    <form id="msform">
+        <!-- progressbar -->
+        <ul id="progressbar">
+            <li class="active">Personal Details</li>
+            <li>Job Details</li>
+            <li>Loan Details</li>
+        </ul>
+        <!-- fieldsets -->
+        <fieldset>
+            <h2 class="fs-title">Personal Details</h2>
+            <h3 class="fs-subtitle">Step 1</h3>
+            <input type="text" name="fname" placeholder="First Name"  />
+            <input type="text" name="lname" placeholder="Last Name" />
+            <input type="text" name="phone" placeholder="Phone" />
+            <input type="text" name="NIC" placeholder="NIC" />
+            <textarea name="address" placeholder="Address"></textarea>
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Job Details</h2>
+            <h3 class="fs-subtitle">step 2</h3>
+            <input type="text" name="Occupation" placeholder="Occupation" />
+            <input type="text" name="Position" placeholder="Position" />
+            <input type="text" name="Salary" placeholder="Salary(RS.)" />
+            <input type="text" name="Income" placeholder="Net Monthly Income(With salary)" />
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Loan Details</h2>
+            <h3 class="fs-subtitle">Step 3</h3>
+            <input type="text" name="Amount" placeholder="Loan Amount(RS.)" />
+            <input type="text" name="Duration" placeholder="Expected Settle. Dur.(By Months)" />
+            <input type="true" name="FD" placeholder="Do you have FD ?(Yes/No)" />
+
+            <div class="custom-select">
+                <label for="loanType">Loan Type</label>
+                <select name="loanType" id="loanType">
+                    <option value="personal">Personal Loan</option>
+                    <option value="home">Housing Loan</option>
+                    <option value="edu">Educational Loan</option>
+                    <option value="auto">Pensioners' Loan</option>
+                </select>
+            </div>
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <a href=".................." class="submit action-button" target="_top">Submit</a>
+        </fieldset>
+    </form>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
