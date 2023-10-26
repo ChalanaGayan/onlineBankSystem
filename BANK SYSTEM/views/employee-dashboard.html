@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="\Employee\Employee\employee dashboard\style.css">
   <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <style>
+    .pages:hover{
+        cursor: pointer;
+    }
+    </style>
 </head>
 
 <body>
@@ -47,26 +52,35 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <form action="/employee-dashboard/savings-account" method="get" id="savings"></form>
+
                         <a class="nav-link" href="saving accounts/saving_accounts.html">
                             <i class="bi bi-people-fill"></i> Open Saving Accounts
                         </a>
                     </li>
                     <li class="nav-item">
+                        <form action="/employee-dashboard/current-account" method="get" id="current"></form>
                         <a class="nav-link" href="current accounts/Current_accounts.html">
                             <i class="bi bi-person-add"></i> Open Current Accounts
                         </a>
                     </li>
                     <li class="nav-item">
+                        <form action="/employee-dashboard/transactions" method="get" id="transactions"></form>
+
                         <a class="nav-link" href="Transections/Transection.html">
                             <i class="bi bi-list-check"></i> Open FD Plans
                         </a>
                     </li>
                     <li class="nav-item">
+                        <form action="/employee-dashboard/openLoans" method="get" id="openloans"></form>
+
                         <a class="nav-link" href="#">
                             <i class="bi bi-list"></i> Open Loans
                         </a>
                     </li>
                     <li class="nav-item">
+                        <form action="/employee-dashboard/reqLoans" method="get" id="reqloans"></form>
+
                         <a class="nav-link" href="#">
                             <i class="bi bi-journal-check"></i> Onlin.Req. Loans 
                             <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto"> 10</span>

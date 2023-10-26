@@ -12,7 +12,7 @@ app.use(cookieParser());
 app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
 
-const port = 3000; // A reminder to change this to environment variables before deploying
+const port = 3001; // A reminder to change this to environment variables before deploying
 
 // Setup static files folder
 app.use(express.static("public"));

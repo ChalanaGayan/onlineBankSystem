@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening Current Account</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+<!-- Dashboard -->
+<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+    <!-- Vertical Navbar -->
+    <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg" id="navbarVertical">
+        <div class="container-fluid">
+            <!-- Toggler -->
+            <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- username -->
+            <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
+                <h3 class="text-success"><img src="https://bytewebster.com/img/logo.png" width="40"><span class="text-info">Neranjan</span></h3> 
+            </a>
+            <!-- User menu (mobile) -->
+            <div class="navbar-user d-lg-none">
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <!-- Toggle -->
+                    <a href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar-parent-child">
+                            <img alt="Image Placeholder" src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar- rounded-circle">
+                            <span class="avatar-child avatar-badge bg-success"></span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidebarCollapse">
+                <!-- Navigation -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-house"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="saving accounts/saving_accounts.html">
+                            <i class="bi bi-people-fill"></i> Open Saving Accounts
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="current accounts/Current_accounts.html">
+                            <i class="bi bi-person-add"></i> Open Current Accounts
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Transections/Transection.html">
+                            <i class="bi bi-list-check"></i> Open FD Plans
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-list"></i> Open Loans
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-journal-check"></i> Onlin.Req. Loans 
+                            <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto"> 10</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Push content down -->
+                <div class="mt-auto"></div>
+                <!-- User (md) -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person-square"></i> Account
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
+                            <i class="bi bi-box-arrow-left"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+    <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+        <!-- Header -->
+        <header class="bg-surface-primary border-bottom pt-6">
+            <div class="container-fluid">
+                <div class="mb-npx">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                            <!-- Title -->
+                            <h1 class="h2 mb-0 ls-tight">
+                                <img src="logo.png" width="40"> Digital Banking With DPRJ Bank </h1>
+                        </div>
+                    </div>
+                    <!-- Nav -->
+                </div>
+            </div>
+        </header>
+        <!-- Main -->
+    <!-- multistep form -->
+    <form id="msform">
+        <!-- progressbar -->
+        <ul id="progressbar">
+            <li class="active">Personal Details</li>
+            <li>Job Details</li>
+            <li>Account Details</li>
+        </ul>
+        <!-- fieldsets -->
+        <fieldset>
+            <h2 class="fs-title">Personal Details</h2>
+            <h3 class="fs-subtitle">Step 1</h3>
+            <input type="text" name="fname" placeholder="First Name"  />
+            <input type="text" name="lname" placeholder="Last Name" />
+            <input type="text" name="phone" placeholder="Phone" />
+            <input type="text" name="NIC" placeholder="NIC" />
+            <textarea name="address" placeholder="Address"></textarea>
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Job Details</h2>
+            <h3 class="fs-subtitle">step 2</h3>
+            <input type="text" name="Occupation" placeholder="Occupation" />
+            <input type="text" name="Position" placeholder="Position" />
+            <input type="text" name="Salary" placeholder="Salary(RS.)" />
+            <input type="text" name="Income" placeholder="Net Monthly Income(With salary)" />
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Account Details</h2>
+            <h3 class="fs-subtitle">Step 3</h3>
+            <input type="text" name="ID" placeholder="Branch ID" />
+            <div class="custom-select">
+                <label for="INQURE">Do you have Any other current accounts ?</label>
+                <select name="INQURE" class="loanType">
+                    <option value="personal">Yes</option>
+                    <option value="home">No</option>
+                </select>
+            </div>
+            <div class="custom-select">
+                <label for="loanType">Account Type</label>
+                <select name="loanType" class="loanType">
+                    <option value="personal">Personal Current Account</option>
+                    <option value="home">Business Current Account</option>
+                </select>
+            </div>
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <a href=".................." class="submit action-button" target="_top">Create</a>
+        </fieldset>
+    </form>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+
+    </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

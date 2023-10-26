@@ -1,10 +1,10 @@
-const mysql = require("mysql2");
+const mysql2 = require("mysql2");
 const dotenv = require("dotenv");
 const auth = require("../routes/customerAuth");
 
 dotenv.config();
 
-const con = mysql.createConnection({
+const con = mysql2.createConnection({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PWD,
