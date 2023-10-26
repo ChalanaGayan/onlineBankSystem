@@ -8,28 +8,28 @@ router.get("/",auth.authUser,function(req,res){ // This needs to be modified onl
 });
 
 router.get("/savings-account",auth.authUser,function(req,res){
-    res.render("customer-dashboard-saving",{Amount1:1000000, user: res.user});
+    res.render("employee-dashboard-savingE",{Amount1:1000000, user: res.user});
 });
 
 router.get("/current-account",auth.authUser,function(req,res){
-    res.render("customer-dashboard-current",{user: res.user});
+    res.render("employee-dashboard-currentE",{user: res.user});
 });
 
-router.get("/transactions",auth.authUser,function(req,res){
-    res.render("customer-dashboard-transactions",{user: res.user});
+router.get("/fixedDeposit",auth.authUser,function(req,res){
+    res.render("employee-dashboard-FDE",{user: res.user});
 });
 
-router.get("/loans",auth.authUser,function(req,res){
-    res.render("customer-dashboard-loans",{user: res.user});
+router.get("/openLoans",auth.authUser,function(req,res){
+    res.render("employee-dashboard-openLoanE",{user: res.user});
 });
 
-router.get("/loan-application",auth.authUser,function(req,res){
-    res.render("loan-application",{user: res.user});
+router.get("/reqLoans",auth.authUser,function(req,res){
+    res.render("employee-dashboard-reqLoanE",{user: res.user});
 });
 
-router.get("/fixed-deposit",auth.authUser,function(req,res){
-    res.render("customer-dashboard-fixed-deposit",{user: res.user});
-});
+// router.get("/fixed-deposit",auth.authUser,function(req,res){
+//     res.render("customer-dashboard-fixed-deposit",{user: res.user});
+// });
 
 router.get("/logout",function(req,res){
     res.clearCookie("jwt");
