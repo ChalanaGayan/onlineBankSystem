@@ -14,7 +14,7 @@ function showSweetAlert() {
     if (result.isConfirmed) {
       Swal.fire(
         'confirmed!',
-        'Request Accepted.',
+        'Withdraw Accepted.',
         'success'
       )
     }

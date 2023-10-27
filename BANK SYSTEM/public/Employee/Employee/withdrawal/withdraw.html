@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opening Current Account</title>
+  <title>Withdraw Money</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
@@ -111,62 +111,45 @@
             </div>
         </header>
         <!-- Main -->
-    <!-- multistep form -->
-    <main class="py-6 bg-surface-secondary">
-    <div class="container-fluid">
-    <form id="msform">
-        <!-- progressbar -->
-        <ul id="progressbar">
-            <li class="active">Personal Details</li>
-            <li>Job Details</li>
-            <li>Account Details</li>
-        </ul>
-        <!-- fieldsets -->
-        <fieldset>
-            <h2 class="fs-title">Personal Details</h2>
-            <h3 class="fs-subtitle">Step 1</h3>
-            <input type="text" name="fname" placeholder="First Name"  />
-            <input type="text" name="lname" placeholder="Last Name" />
-            <input type="date" name="birth" placeholder="Date of birth"  />
-            <input type="text" name="phone" placeholder="Phone" />
-            <input type="text" name="NIC" placeholder="NIC" />
-            <textarea name="address" placeholder="Address"></textarea>
-            <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
-        <fieldset>
-            <h2 class="fs-title">Job Details</h2>
-            <h3 class="fs-subtitle">step 2</h3>
-            <input type="text" name="Occupation" placeholder="Occupation" />
-            <input type="text" name="Position" placeholder="Position" />
-            <input type="text" name="Salary" placeholder="Salary(RS.)" />
-            <input type="text" name="Income" placeholder="Net Monthly Income(With salary)" />
-            <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
-        <fieldset>
-            <h2 class="fs-title">Account Details</h2>
-            <h3 class="fs-subtitle">Step 3</h3>
-            <input type="text" name="ID" placeholder="Branch ID" />
-            <div class="custom-select">
-                <label for="INQURE">Do you have Any other current accounts ?</label>
-                <select name="INQURE" class="loanType">
-                    <option value="personal">Yes</option>
-                    <option value="home">No</option>
-                </select>
+        <main class="py-6 bg-surface-secondary">
+            <div class="container-fluid">
+                <!-- Card stats -->
+                <div class="wrapper">
+                    <div class="payment">
+                      <div class="payment-logo">
+                        <p>W</p>
+                      </div>
+                      
+                      
+                      <h2>  Withdraw</h2>
+                      <div class="form">
+                        <div class="card space icon-relative">
+                          <label class="label">Branch ID</label>
+                          <input type="text" class="input" placeholder="Branch ID">
+                         
+                        </div>
+                        <div class="card space icon-relative">
+                            <label class="label">Saving Acc.No</label>
+                            <input type="text" class="input" placeholder="Acc No.">
+                           
+                          </div>
+                          <div class="card space icon-relative">
+                            <label class="label">Amount</label>
+                            <input type="text" class="input"  placeholder="LKR">
+                          </div>
+                        <div class="btn">
+                            <button type="button" onclick="showSweetAlert()" >
+                                Confirm 
+                            </button>
+                        </div> 
+                        
+                      </div>
+                    </div>
+                  </div>
             </div>
-            <div class="custom-select">
-                <label for="loanType">Account Type</label>
-                <select name="loanType" class="loanType">
-                    <option value="personal">Personal Current Account</option>
-                    <option value="home">Business Current Account</option>
-                </select>
+                
             </div>
-            <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <a href=".................." class="submit action-button" target="_top">Create</a>
-        </fieldset>
-    </form>
-    </div>
-    </main>
+        </main>
     <!-- JavaScript -->
     <script src="script.js"></script>
 
