@@ -23,13 +23,14 @@ const checkPWD = (stored,userInput)=>{
         return false
 };
 
-
+// temp_user table is used until we connect user authorization properly
+// User authorization
 exports.checkUser = (req,res)=>{
     let username = req.body.username;
     let password = req.body.password;
-    con.query(`SELECT * FROM customer WHERE username=?`,[username],(err,result)=>{
-        if (result){
-            if (checkPWD(result[0].pwd,password)){
+    con.query(`SELECT * FROM temp_user WHERE username=?`,[username],(err,result)=>{
+        if (result[0]){
+            if (checkPWD(result[0].password,password)){
                 const token = auth.getToken(username); // This is where we create the access token at login
                 res.cookie("jwt",token,{
                     //maxAge: 600000,
@@ -45,7 +46,31 @@ exports.checkUser = (req,res)=>{
     });
 }
 
-exports.addUser = (req,res)=>{
-    
+// Get customer Savings accounts' details
+exports.getSavings = (username,callback)=>{
+    con.query(`call customer_display_saving_accounts(?)`,[username],(err,result)=>{
+        console.log(result);
+        if(result)
+            callback(null,result[0][0],result[0][1],result[0][2],result[0][3]);
+        else
+            callback(null);
+    });
 }
+
+// Get customer Current accounts' details
+exports.getCurrent = (username,callback)=>{
+    con.query(`call customer_display_current_accounts(?)`,[username],(err,result)=>{
+        console.log(result);
+        if(result)
+            callback(null,result[0][0],result[0][1],result[0][2],result[0][3]);
+        else 
+            callback(null);
+    });
+}
+
+exports.doTransaction = ()=>{
+
+}
+
+
 
