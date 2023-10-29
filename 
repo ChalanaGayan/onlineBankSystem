@@ -1,0 +1,68 @@
+[33mcommit b898247f38f1f57a3115609b3f7eb5235de9a684[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: ChamathJ <ranasingherpcgj.21@uom.lk>
+Date:   Sun Oct 29 15:21:45 2023 +0530
+
+    Enable data update for savings and current accounts of customer dashboard
+
+[33mcommit 8075558a7cb69d9383d46327391564d6526e9a15[m
+Merge: a7f10d0 c154769
+Author: Neranjan Pushpakumara <128743463+MrNeranjan@users.noreply.github.com>
+Date:   Sat Oct 28 01:25:14 2023 +0530
+
+    Merge pull request #17 from MrNeranjan/main
+    
+    changes done
+
+[33mcommit c154769343df0ae7511203712191fb681cc4558d[m
+Author: Neranjan Pushpakumara <neranjan.education@gmail.com>
+Date:   Sat Oct 28 01:23:43 2023 +0530
+
+    changes done
+
+[33mcommit a7f10d0927ed772059d6e5e6c35499a0d775d1d8[m
+Author: ChamathJ <ranasingherpcgj.21@uom.lk>
+Date:   Tue Oct 24 22:48:24 2023 +0530
+
+    Begin here
+
+[33mcommit 2b2d609ec733661fff996b560d2280f2d738d669[m
+Author: Chalana Gayan <gayanchalana@gmail.com>
+Date:   Tue Oct 24 19:13:00 2023 +0530
+
+    new main
+
+[33mcommit c6c2d78fad83e5a8f39da8f1ef18849cd6babbe9[m
+Author: Chalana Gayan <gayanchalana@gmail.com>
+Date:   Tue Oct 24 19:08:01 2023 +0530
+
+    hh
+
+[33mcommit b2eae415fdf0fcc5e83b155799c241ca62e4df2a[m
+Author: Chalana Gayan <gayanchalana@gmail.com>
+Date:   Tue Oct 24 19:07:29 2023 +0530
+
+    hh
+
+[33mcommit f78ea99ea064c32f188ca98ad5dcb8180b082b16[m
+Author: ChamathJ <chamathmmw@gmail.com>
+Date:   Wed Oct 11 13:39:39 2023 +0530
+
+    Test
+
+[33mcommit 1b6aa907ffca187b30ba381982cc546caae0e3aa[m
+Author: Chalana Gayan <gayanchalana@gmail.com>
+Date:   Wed Oct 11 08:01:26 2023 +0530
+
+    Main File
+
+[33mcommit 4f0e6e5bd559cade45039a0f003d21961d09f55d[m
+Author: Dhanawardhana G.A.C.G <109666856+ChalanaGayan@users.noreply.github.com>
+Date:   Thu Oct 5 09:53:34 2023 +0530
+
+    Update README.md
+
+[33mcommit 6413aedea746795ccc42d5ed4bce663dc7707cfc[m
+Author: Chalana Gayan <gayanchalana@gmail.com>
+Date:   Thu Oct 5 09:52:29 2023 +0530
+
+    Initial commit
