@@ -1,20 +1,21 @@
-const mysql = require("mysql2");
+const mysql2 = require("mysql2"); // Use mysql2 instead of mysql
 const dotenv = require("dotenv");
 const auth = require("../routes/auth");
 
-dotenv.config();
+const connection = mysql2.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Chalana1234',
+    database: 'bank_system'
+  });
 
-const con = mysql.createConnection({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PWD,
-    database: process.env.MYSQL_DATABASE
+connection.connect((err) => {
+    if (err) {
+        console.error('Error connecting to MySQL:', err);
+        return;
+    }
+    console.log('Connected to MySQL database');
 });
-
-con.connect((err)=>{
-    if(err) console.log(err);
-})
-
 // Try implementing password hashing
 const checkPWD = (stored,userInput)=>{
     if (stored==userInput)
