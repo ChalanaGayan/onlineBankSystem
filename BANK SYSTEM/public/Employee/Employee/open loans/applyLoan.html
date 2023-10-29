@@ -70,8 +70,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <i class="bi bi-journal-check"></i> Onlin.Req. Loans 
-                            <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto"> 10</span>
+                            <i class="bi bi-journal-check"></i> Withdraw Money 
                         </a>
                     </li>
                 </ul>
@@ -113,6 +112,8 @@
         </header>
         <!-- Main -->
     <!-- multistep form -->
+    <main class="py-6 bg-surface-secondary">
+    <div class="container-fluid">
     <form id="msform">
         <!-- progressbar -->
         <ul id="progressbar">
@@ -145,7 +146,7 @@
             <h2 class="fs-title">Loan Details</h2>
             <h3 class="fs-subtitle">Step 3</h3>
             <input type="text" name="Amount" placeholder="Loan Amount(RS.)" />
-            <input type="text" name="Duration" placeholder="Expected Settle. Dur.(By Months)" />
+            <input type="text" name="Duration" placeholder="Expected Settle Duration.(By Months)" />
             <div class="custom-select">
                 <label for="loanType">Do you have FD ?</label>
                 <select name="loanType" id="loanType">
@@ -166,6 +167,8 @@
             <a href=".................." class="submit action-button" target="_top">Submit</a>
         </fieldset>
     </form>
+    </div>
+    </main>
     
     <!-- JavaScript -->
     <script src="script.js"></script>
