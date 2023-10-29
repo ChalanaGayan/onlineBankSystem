@@ -22,4 +22,10 @@ router.post("/customer-dashboard/loans",async (req,res)=>{
     res.send("Recieved");
 });
 
+router.post("/customer-dashboard/transactions", (req,res)=>{
+    customerQuery.doTransaction(req,res,(res,message)=>{
+        res.render("customer-dashboard-transactions",{message: message});
+    });
+});
+
 module.exports = router;

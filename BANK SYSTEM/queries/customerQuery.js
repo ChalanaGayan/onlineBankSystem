@@ -68,7 +68,18 @@ exports.getCurrent = (username,callback)=>{
     });
 }
 
-exports.doTransaction = ()=>{
+exports.doTransaction = (req,res,callback)=>{
+    const fromAccount = req.body.fromAccount;
+    const toAccount = req.body.toAccount;
+    const amount = req.body.amount;
+
+    con.query(`CALL customer_money_transaction(?,?,?)`,[fromAccount,toAccount,amount],(err,result)=>{
+        if(err){   
+            callback(res,"fail");
+        } else{
+            callback(res,"success");
+        }
+    });
 
 }
 

@@ -133,27 +133,34 @@
             
             
             <h2>Transection</h2>
-            <div class="form">
+            <form action="/customer-dashboard/transactions" method="post" class="form">
               <div class="card space icon-relative">
                 <label class="label">From Account:</label>
-                <input type="text" class="input" placeholder="Account Number">
+                <input type="text" class="input" placeholder="Account Number" name="fromAccount" required="true">
                 <i class="fas fa-user"></i>
               </div>
               <div class="card space icon-relative">
                 <label class="label">To Account:</label>
-                <input type="text" class="input"  placeholder="Account Number">
+                <input type="text" class="input"  placeholder="Account Number" name="toAccount" required="true">
                 <i class="fas fa-user"></i>
               </div>
               <div class="card space icon-relative">
                   <label class="label">Amount:</label>
-                  <input type="text" class="input"  placeholder="LKR">
+                  <input type="text" class="input"  placeholder="LKR" name="amount" required="true">
                   <i class="fas bi-coin"></i>
               </div>
-              <div class="btn">
-                Confirm
+              <div>
+                <button type="submit" class="btn">Confirm</button>
               </div> 
               
-            </div>
+            </form>
+            {{#eq message "success"}}
+                <h6 class="alert alert-success mt-4">Successfully Transferred</h6>
+            {{else}}
+                {{#eq message "fail"}}
+                    <h6 class="alert alert-danger mt-4">Transfer Failed</h6>
+                {{/eq}}
+            {{/eq}}
           </div>
         </div>
 
