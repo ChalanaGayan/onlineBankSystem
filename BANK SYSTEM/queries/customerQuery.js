@@ -68,6 +68,18 @@ exports.getCurrent = (username,callback)=>{
     });
 }
 
+
+exports.getAllAccounts = (username,callback)=>{
+    con.query(`call customer_display_all_accounts(?)`,[username],(err,result)=>{
+        console.log(result);
+        if(result)
+            callback(null,result[0]);
+        else 
+            callback(null);
+    });
+}
+
+
 /*Below code are related to doing a transaction*/
 
 // Check remaining amount of from account

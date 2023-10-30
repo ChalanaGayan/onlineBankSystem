@@ -134,12 +134,12 @@
             
             <h2>Transection</h2>
             <form action="/customer-dashboard/transactions" method="post" class="form">
+              <div class="card space icon-relative">  
                 <label class="label">From Account:</label>
-                <select class="input">
-                    <option value="acc1">Account 1</option>
-                    <option value="acc2">Account 2</option>
-                    <option value="acc3">Account 3</option>
-                    <option value="acc4">Account 4</option>
+                <select class="input" name="fromAccount">
+                    {{#each accounts}}
+                        <option value="{{this.Acc_No}}">{{this.Acc_No}}</option>
+                    {{/each}}
                 </select>
                 <i class="fas fa-user"></i>
               </div>

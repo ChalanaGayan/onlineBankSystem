@@ -23,7 +23,14 @@ router.get("/current-account",auth.authUser,function(req,res){
 });
 
 router.get("/transactions",auth.authUser,function(req,res){
-    res.render("customer-dashboard-transactions",{user: res.user});
+    query.getAllAccounts(res.user,(err, accounts)=>{
+        const accJSON = JSON.stringify(accounts)
+        res.append("accounts",accJSON);
+
+        res.render("customer-dashboard-transactions",{user: res.user,accounts:accounts});
+    });
+
+    
 });
 
 router.get("/loans",auth.authUser,function(req,res){
