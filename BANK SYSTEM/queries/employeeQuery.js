@@ -44,10 +44,10 @@ exports.checkUser = (req,res)=>{
                 })
 
             } else{
-                res.render("employee-login",{message: "Invalid Username or Password"});
+                res.render("employee-dashboard/employee-login",{message: "Invalid Username or Password"});
             }
         } else{
-            res.render("employee-login",{message: "Invalid Username or Password"});
+            res.render("employee-dashboard/employee-login",{message: "Invalid Username or Password"});
         }
     });
 }

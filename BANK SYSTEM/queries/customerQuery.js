@@ -38,10 +38,10 @@ exports.checkUser = (req,res)=>{
                 })
                 res.redirect("customer-dashboard");
             } else{
-                res.render("customer-login",{message: "Invalid Username or Password"});
+                res.render("customer-dashboard/customer-login",{message: "Invalid Username or Password"});
             }
         } else{
-            res.render("customer-login",{message: "Invalid Username or Password"});
+            res.render("customer-dashboard/customer-login",{message: "Invalid Username or Password"});
         }
     });
 }
