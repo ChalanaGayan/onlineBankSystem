@@ -1,7 +1,7 @@
 const dropList = document.querySelectorAll("form select"),
 fromCurrency = document.querySelector(".from select"),
 toCurrency = document.querySelector(".to select"),
-getButton = document.querySelector("form button");
+getButton = document.querySelector("#exchange-rate-form button");
 
 for (let i = 0; i < dropList.length; i++) {
     for(let currency_code in country_list){
@@ -31,8 +31,9 @@ window.addEventListener("load", ()=>{
     getExchangeRate();
 });
 
-getButton.addEventListener("click", e =>{
-    e.preventDefault(); //preventing form from submitting
+
+getButton.addEventListener("click", e => {
+    e.preventDefault(); // Preventing form from submitting
     getExchangeRate();
 });
 
