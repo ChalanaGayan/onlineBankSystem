@@ -125,6 +125,70 @@ body{
 
 
 /* section 1 */
+/* animated text */
+
+.animated-text{
+  
+  font-size: 4vw;
+  font-weight: 600;
+  min-width: 280px;
+}
+
+.animated-text span{
+  left: auto;
+  position: relative;
+}
+
+.animated-text span::before{
+  content: "banker";
+  color: #1F51FF;
+  animation: words 25s infinite;
+}
+
+.animated-text span::after{
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 6vw;
+  background-color: black;
+  border-left: 2px solid #1F51FF;
+  right: -8px;
+  animation: cursor .8s infinite, typing 25s steps(16) infinite;
+}
+
+@keyframes cursor {
+  to{
+      border-left: 2px solid #ff7f5000;
+  }
+}
+
+@keyframes words {
+  0%,20%{
+      content: "Savings and Checking accounts.";
+  }
+  21%,40%{
+      content: "Personal and Business loans.";
+  }
+  41%,60%{
+      content: "Online banking Convenience.";
+  }
+  61%,80%{
+      content: "Foreign Exchange services.";
+  }
+  81%,100%{
+      content: "ATM and branch network access.";
+  }
+}
+
+@keyframes typing {
+  10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+      width: 0;
+  }
+  5%,20%,25%,40%,45%,60%,65%,80%,85%{
+      width: calc(100% + 8px);
+  }
+}
+/* ----------------------------------------------------------- */
 #welcome-text{
     padding-bottom: 1%;
     width: fit-content;
@@ -144,7 +208,7 @@ body{
     text-decoration: none;
 }
 .login{
-  padding-top: 20%;
+  padding-top: 11%;
 
 }
 .login button {
@@ -329,7 +393,16 @@ form button:hover{
   color: #035c7a;
 }
 
-@media (max-width: 700px){
+@media (max-width: 750px){
+
+  
+.headline{
+  color: white;
+  text-align: center;
+  padding-top: 11%;
+  padding-bottom: 2%;
+
+}
   
 .wrapper{
   width: 370px;
