@@ -132,3 +132,14 @@ exports.getFixedDeposits = (username,callback)=>{
         }
     });
 }
+
+exports.addLoan = (res,NIC,Amount,Duration,loanType)=>{
+    con.query(`CALL customer_loan_application(?,?,?,?)`,[NIC,Amount,Duration,loanType],(err,result)=>{
+        if(result[0][0]["@status"]){
+            res.redirect("/customer-dashboard");
+        }else{
+            res.redirect("/customer-dashboard");
+        }
+        
+    });
+}
