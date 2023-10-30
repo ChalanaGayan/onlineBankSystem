@@ -113,7 +113,7 @@
         </header>
         <!-- Main -->
     <!-- multistep form -->
-    <form id="msform">
+    <form id="msform" action="/employee-dashboard/savings-account" method="post" id="details-form">
         <!-- progressbar -->
         <ul id="progressbar">
             <li class="active">Personal Details</li>
@@ -128,6 +128,8 @@
             <input type="text" name="lname" placeholder="Last Name" />
             <input type="text" name="phone" placeholder="Phone" />
             <input type="text" name="NIC" placeholder="NIC" />
+            <label for="birthDate">Date of birth</label>
+            <input type="date" name="birthDate" placeholder="Date of birth" />
             <textarea name="address" placeholder="Address"></textarea>
             <input type="button" name="next" class="next action-button" value="Next" />
         </fieldset>
@@ -144,36 +146,29 @@
         <fieldset>
             <h2 class="fs-title">Account Details</h2>
             <h3 class="fs-subtitle">Step 3</h3>
-            <input type="text" name="ID" placeholder="Branch ID" />
+            <input type="text" name="ID" placeholder="Branch ID" name="branchID" />
             <div class="custom-select">
-                <label for="INQURE">Do you have Any other saving accounts ?</label>
-                <select name="INQURE" class="loanType">
-                    <option value="personal">Yes</option>
-                    <option value="home">No</option>
-                </select>
-            </div>
-            <div class="custom-select">
-                <label for="loanType">Account Type</label>
-                <select name="loanType" class="loanType">
-                    <option value="personal">Children Saving Account</option>
-                    <option value="home">Teen Saving Account</option>
-                    <option value="personal">Adult Saving Account</option>
-                    <option value="home">Pensioners' Saving Account</option>
+                <label for="accountType">Account Type</label>
+                <select name="accountType" class="loanType">
+                    <option value="1">Children Saving Account</option>
+                    <option value="2">Teen Saving Account</option>
+                    <option value="3">Adult Saving Account</option>
+                    <option value="4">Pensioners' Saving Account</option>
                 </select>
             </div>
             
             <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <a href=".................." class="submit action-button" target="_top">Create</a>
+            <input type="submit" class="submit action-button" target="details-form" value="Create">
         </fieldset>
     </form>
     
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="\Employee\Employee\open saving account\script.js"></script>
 
 
     </div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="\Employee\Employee\open saving account\script.js"></script>
 </body>
 </html>
