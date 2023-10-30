@@ -17,7 +17,7 @@ hbs.registerHelper('eq', function (a, b, options) {
     return a === b ? options.fn(this) : options.inverse(this);
   });
 
-const port = 3001; // A reminder to change this to environment variables before deploying
+const port = 3000; // A reminder to change this to environment variables before deploying
 
 // Setup static files folder
 app.use(express.static("public"));
