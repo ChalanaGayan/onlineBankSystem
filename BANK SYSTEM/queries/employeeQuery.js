@@ -46,15 +46,26 @@ exports.checkUser = (req,res)=>{
                 })
 
             } else{
-                res.render("employee-dashboard/employee-login",{message: "Invalid Username or Password"});
+                res.render("employee-login",{message: "Invalid Username or Password"});
             }
         } else{
-            res.render("employee-dashboard/employee-login",{message: "Invalid Username or Password"});
+            res.render("employee-login",{message: "Invalid Username or Password"});
         }
     });
 }
 
-exports.addUser = (req,res)=>{
-    
+exports.createSavings = (req,res,callback)=>{
+    const content = req.body;
+    console.log(content);
+
+    let fname = content.fname;
+    let lname = content.lname;
+    let birthdate = content.birthdate;
+    let NIC = content.NIC;
+    let address = content.addresss;
+    let branchID = content.branchID;
+    let accountType = content.accountType;
+
+    callback(res,null);     
 }
 
