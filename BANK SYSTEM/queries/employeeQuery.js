@@ -36,10 +36,12 @@ exports.checkUser = (req,res)=>{
                     httpOnly: true
                 })
 
+                // Check whether its a manager or an employee
                 con.query(`call get_Position(?)`,[username],(err,result)=>{
-                    const position = result[0].Position;
-                    if (position=="Manager") res.redirect("employee-dashboard");
-                    else res.redirect("employee-dashboard/manager");
+                    const position = result[0][0].Position;
+                    console.log(position);
+                    if (position=="Manager"){res.redirect("employee-dashboard/manager");}
+                    else {res.redirect("employee-dashboard");}
                     
                 })
 
