@@ -24,6 +24,7 @@ router.post("/customer-dashboard/loans",async (req,res)=>{
 
 router.post("/customer-dashboard/transactions", (req,res)=>{
     customerQuery.doTransaction(req,res,(res,message)=>{
+        console.log(message);
         res.render("customer-dashboard-transactions",{message: message});
     });
 });

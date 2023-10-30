@@ -159,6 +159,14 @@
             {{else}}
                 {{#eq message "fail"}}
                     <h6 class="alert alert-danger mt-4">Transfer Failed</h6>
+                {{else}}
+                    {{#eq message "invalid"}}
+                        <h6 class="alert alert-warning mt-4">Invalid Account</h6>
+                    {{else}}
+                        {{#eq message "invalidAmount"}}
+                            <h6 class="alert alert-danger mt-4">Check Your Funds</h6>
+                        {{/eq}}
+                    {{/eq}}
                 {{/eq}}
             {{/eq}}
           </div>

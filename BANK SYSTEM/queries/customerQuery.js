@@ -68,20 +68,45 @@ exports.getCurrent = (username,callback)=>{
     });
 }
 
-exports.doTransaction = (req,res,callback)=>{
-    const fromAccount = req.body.fromAccount;
-    const toAccount = req.body.toAccount;
-    const amount = req.body.amount;
+/*Below code are related to doing a transaction*/
 
-    con.query(`CALL customer_money_transaction(?,?,?)`,[fromAccount,toAccount,amount],(err,result)=>{
-        if(err){   
-            callback(res,"fail");
+// Check remaining amount of from account
+const checkAmount = (res,amount,fromAccount,toAccount,maincallback)=>{
+    con.query(`SELECT from_acc_amount_check(?,?)`,[amount,fromAccount],(err,result)=>{
+        if (result[0]['from_acc_amount_check('+amount+','+fromAccount+')']){
+            con.query(`CALL customer_money_transaction(?,?,?)`,[fromAccount,toAccount,amount],(err,result)=>{
+                if(err){   
+                    maincallback(res,"fail");
+                } else{
+                    maincallback(res,"success");
+                }
+            }); 
         } else{
-            callback(res,"success");
+            maincallback(res,"invalidAmount");
         }
     });
-
 }
 
 
+//Check the validity of toAccount
+const checkToAccount = (res,fromAccount,toAccount,amount,amountCheck,maincallback)=>{
+    con.query(`SELECT check_to_account_valid(?);`,[toAccount],(err,result)=>{
+        if(result[0]['check_to_account_valid('+toAccount+')']){
+            amountCheck(res,amount,fromAccount,toAccount,maincallback)
+        } else{
+            maincallback(res,"invalid");
+        }
+    })
+}
+
+exports.doTransaction = (req,res,maincallback)=>{
+    const fromAccount = parseInt(req.body.fromAccount);
+    const toAccount = parseInt(req.body.toAccount);
+    const amount = parseFloat(req.body.amount);
+
+    checkToAccount(res,fromAccount,toAccount,amount,checkAmount,maincallback);
+
+}
+
+/* End of transactions code */
 
