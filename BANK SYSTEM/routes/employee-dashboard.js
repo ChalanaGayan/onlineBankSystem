@@ -33,7 +33,13 @@ router.get("/reqLoans",auth.authUser,function(req,res){
 
 router.get("/logout",function(req,res){
     res.clearCookie("jwt");
-    return res.redirect("/customer-login");
+    return res.redirect("/employee-login");
+});
+
+/* The below code is regarding the manager */
+
+router.get("/manager",function(req,res){
+    res.send("Manager");
 });
 
 module.exports = router;

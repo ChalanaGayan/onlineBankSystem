@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Dashboard</title>
-  <link rel="stylesheet" href="\Employee\Employee\employee dashboard\style.css">
+  <title>Manager Dashboard</title>
+  <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-  <style>
-    .pages:hover{
-        cursor: pointer;
-    }
-    </style>
 </head>
 
 <body>
@@ -52,38 +47,29 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <form action="/employee-dashboard/savings-account" method="get" id="savingE"></form>
-
-                        <a class="nav-link pages"onclick="document.getElementById('savingE').submit()">
-                            <i class="bi bi-people-fill"></i> Open Saving Accounts
+                        <a class="nav-link" href="saving accounts/saving_accounts.html">
+                            <i class="bi bi-people-fill"></i> Working Employees
                         </a>
                     </li>
                     <li class="nav-item">
-                        <form action="/employee-dashboard/current-account" method="get" id="currentE"></form>
-                        <a class="nav-link pages" onclick="document.getElementById('currentE').submit()">
-                            <i class="bi bi-person-add"></i> Open Current Accounts
+                        <a class="nav-link" href="current accounts/Current_accounts.html">
+                            <i class="bi bi-person-add"></i> Add Employees
                         </a>
                     </li>
                     <li class="nav-item">
-                        <form action="/employee-dashboard/fixedDeposit" method="get" id="FDE"></form>
-
-                        <a class="nav-link pages" onclick="document.getElementById('FDE').submit()">
-                            <i class="bi bi-list-check"></i> Open FD Plans
+                        <a class="nav-link" href="Transections/Transection.html">
+                            <i class="bi bi-list-check"></i> Transactions
                         </a>
                     </li>
                     <li class="nav-item">
-                        <form action="/employee-dashboard/openLoans" method="get" id="openLoanE"></form>
-
-                        <a class="nav-link pages" onclick="document.getElementById('openLoanE').submit()">
-                            <i class="bi bi-list"></i> Open Loans
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-list"></i> Late Loans
                         </a>
                     </li>
                     <li class="nav-item">
-                        <form action="/employee-dashboard/reqLoans" method="get" id="reqLoanE"></form>
-
-                        <a class="nav-link pages" onclick="document.getElementById('reqLoanE').submit()">
-                            <i class="bi bi-journal-check"></i> Online Request Loans 
-                            <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto"> 10</span>
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-journal-check"></i> Loan Approvals
+                            <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span>
                         </a>
                     </li>
                 </ul>
@@ -93,13 +79,12 @@
                 <!-- User (md) -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link page" href="#">
-                            <i class="bi bi-person-square"></i> {{user}}
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person-square"></i> Account
                         </a>
                     </li>
-                    <li class="nav-item pages">
-                        <form action="/employee-dashboard/logout" method="get" id="logout"></form>
-                        <a class="nav-link" onclick="document.getElementById('logout').submit();">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
                             <i class="bi bi-box-arrow-left"></i> Logout
                         </a>
                     </li>
@@ -117,7 +102,7 @@
                         <div class="col-sm-6 col-12 mb-4 mb-sm-0">
                             <!-- Title -->
                             <h1 class="h2 mb-0 ls-tight">
-                                <img src="\Employee\Employee\employee dashboard\logo.png" width="40"> Digital Banking With DPRJ Bank </h1>
+                                <img src="logo.png" width="40"> Digital Banking With DPRJ Bank </h1>
                         </div>
                     </div>
                     <!-- Nav -->
@@ -127,16 +112,16 @@
         <!-- Main -->
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 3%;">
             <div style="background-color: rgb(26, 33, 41); padding: 10px; border-radius: 20px;">
-                <img src="\Employee\Employee\employee dashboard\logo.png" alt="logo" style="max-width: 100%; height: auto; display: block;">
+                <img src="logo.png" alt="logo" style="max-width: 100%; height: auto; display: block;">
             </div>
             <div style="background-color: rgb(26, 33, 41); padding: 10px;margin-top:3% ;border-radius: 15px;">
-                <h2 style="color: white;">"Empowering Progress, One Customer at a Time."</h2>
+                <h2 style="color: white;">Fostering Leadership Excellence, One Decision at a Time.</h2>
             </div>
         </div>
 
     </div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="\Employee\Employee\employee dashboard\script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

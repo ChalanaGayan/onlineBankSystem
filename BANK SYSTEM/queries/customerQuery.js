@@ -28,9 +28,9 @@ const checkPWD = (stored,userInput)=>{
 exports.checkUser = (req,res)=>{
     let username = req.body.username;
     let password = req.body.password;
-    con.query(`SELECT * FROM temp_user WHERE username=?`,[username],(err,result)=>{
+    con.query(`SELECT * FROM customer_online_banking_details WHERE User_Name=?`,[username],(err,result)=>{
         if (result[0]){
-            if (checkPWD(result[0].password,password)){
+            if (checkPWD(result[0].Password,password)){
                 const token = auth.getToken(username); // This is where we create the access token at login
                 res.cookie("jwt",token,{
                     //maxAge: 600000,
