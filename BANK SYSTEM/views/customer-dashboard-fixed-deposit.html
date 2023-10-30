@@ -131,24 +131,24 @@
             <div class="card-body text-primary">
                 <table>
                     <tr>
-                        <td>Amount</td>
-                        <td>LKR 25000000.00</td>
+                        <td>Amount: </td>
+                        <td>{{#if details}}LKR{{details.Amount}}{{else}}None{{/if}}</td>
                     </tr>
                     <tr>
-                        <td>Time Duration</td>
-                        <td>2 years</td>
+                        <td>Time Duration: </td>
+                        <td>{{#if details}}{{details.Time_Duration}} months{{else}}None{{/if}}</td>
                     </tr>
                     <tr>
-                        <td>Interest Rate per annum  </td>
-                        <td>15%</td>
+                        <td>Interest Rate per annum: </td>
+                        <td>{{#if details}}{{details.Interest_Rate_Per_Annum}}%{{else}}None{{/if}}</td>
                     </tr>
                     <tr>
-                        <td>Opening Date</td>
-                        <td>2023/03/13</td>
+                        <td>Opening Date: </td>
+                        <td>{{#if details}}{{details.Opening_Date}}{{else}}None{{/if}}</td>
                     </tr>
                     <tr>
-                        <td>Closing Date</td>
-                        <td>2023/03/13</td>
+                        <td>Closing Date: </td>
+                        <td>{{#if details}}{{details.Closing_Date}}{{else}}None{{/if}}</td>
                     </tr>
                 </table>
             </div>

@@ -122,3 +122,13 @@ exports.doTransaction = (req,res,maincallback)=>{
 
 /* End of transactions code */
 
+// Get Fixed Deposits
+exports.getFixedDeposits = (username,callback)=>{
+    con.query(`CALL customer_display_FD_details(?)`,[username],(err,result)=>{
+        if(result){
+            callback(null,result[0][0]);
+        }else{
+            callback(null);
+        }
+    });
+}

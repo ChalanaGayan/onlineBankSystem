@@ -42,7 +42,12 @@ router.get("/loan-application",auth.authUser,function(req,res){
 });
 
 router.get("/fixed-deposit",auth.authUser,function(req,res){
-    res.render("customer-dashboard-fixed-deposit",{user: res.user});
+    query.getFixedDeposits(res.user,(err, details)=>{
+        console.log(details);
+        res.render("customer-dashboard-fixed-deposit",{user: res.user, details: details});
+    });
+
+    
 });
 
 router.get("/logout",function(req,res){
