@@ -28,9 +28,17 @@ router.post("/customer-dashboard/loans",async (req,res)=>{
 router.post("/customer-dashboard/transactions", (req,res)=>{
     customerQuery.doTransaction(req,res,(res,message)=>{
         //const accounts = JSON.parse(req.get("accounts"));
-        res.render("customer-dashboard-transactions",{message: message});
+        res.render("customer-dashboard/customer-dashboard-transactions",{user: res.user,message: message});
     });
 });
+
+router.post("/employee-dashboard/savings-account", (req,res)=>{
+    employeeQuery.createSavings(req,res,(res,message)=>{
+        res.render("employee-dashboard/employee-dashboard-savingE",{user: res.user,message: message});
+    });
+});
+
+
 
 
 
