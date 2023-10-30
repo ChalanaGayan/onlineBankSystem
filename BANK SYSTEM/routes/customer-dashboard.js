@@ -38,7 +38,7 @@ router.get("/loans",auth.authUser,function(req,res){
 });
 
 router.get("/loan-application",auth.authUser,function(req,res){
-    res.render("customer-dashboard/loan-application",{user: res.user});
+    res.render("loan-application",{user: res.user});
 });
 
 router.get("/fixed-deposit",auth.authUser,function(req,res){
