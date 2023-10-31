@@ -130,301 +130,36 @@
                                     <th scope="col">Loan Type</th>
                                     <th scope="col">Installment</th>
                                     <th scope="col">Expected Inst.Date</th>
-                                    <th scope="col">Late Fee</th>
+                                    <th scope="col">Installment Date</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                {{#each loans}}
+                                <tr> 
                                     <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
+                                        <a class="text-heading font-semibold">
+                                            {{this.Loan_Detail_ID}}
                                         </a>
                                     </td>
                                     <td>
-                                        personal loan
+                                        {{this.Loan_Type}}
                                     </td>
                                     <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
+                                        <a class="text-heading font-semibold">
+                                            LKR {{this.Amount}}
                                         </a>
                                     </td>
                                     <td>
-                                        2015/04/03
+                                        {{formatDate this.Due_Date}}
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
+                                            {{formatDate this.Installed_Date}}
                                         </span>
                                     </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
-                                        </a>
-                                    </td>
-                                    <td>
-                                        personal loan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
-                                        </a>
-                                    </td>
-                                    <td>
-                                        personal loan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
-                                        </a>
-                                    </td>
-                                    <td>
-                                        personal loan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
-                                        </a>
-                                    </td>
-                                    <td>
-                                        personal loan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
-                                        </a>
-                                    </td>
-                                    <td>
-                                        personal loan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
-                                        </a>
-                                    </td>
-                                    <td>
-                                        personal loan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
-                                        </a>
-                                    </td>
-                                    <td>
-                                        personal loan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
-                                        </a>
-                                    </td>
-                                    <td>
-                                        personal loan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            1234
-                                        </a>
-                                    </td>
-                                    <td>
-                                        personal loan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            LKR 80,000.00
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 5000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                {{/each}}
                             </tbody>
                         </table>
                     </div>

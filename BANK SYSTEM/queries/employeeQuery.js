@@ -144,8 +144,14 @@ exports.getTransactions = (callback)=>{
     con.query(`call show_bankwise_transactions_report()`,(err,result)=>{
         const transactions = result[0];
         callback(transactions);
-    });
-    
+    });   
+}
+
+exports.getLateLoans = (username,callback)=>{
+    con.query(`call manager_display_late_loans(?)`,[username],(err,result)=>{
+        const loans = result[0];
+        callback(loans);
+    });   
 }
 
 

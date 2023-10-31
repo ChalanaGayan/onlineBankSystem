@@ -55,7 +55,10 @@ router.get("/bankwise_transections", auth.authUser, function (req, res) {
 });
 
 router.get("/late_loan_installment", auth.authUser, function (req, res) {
-    res.render("manager-dashboard/late_loan_installment",{ user: res.user });
+    query.getLateLoans(res.user,(loans)=>{
+        res.render("manager-dashboard/late_loan_installment",{ user: res.user, loans: loans});
+    }); 
+    
 });
 
 router.get("/loan_request", auth.authUser, function (req, res) {
