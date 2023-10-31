@@ -44,34 +44,35 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <form action="/employee-dashboard" method="get" id="dashboard"></form>
+                        <a class="nav-link pages"onclick="document.getElementById('dashboard').submit()">
                             <i class="bi bi-house"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="saving accounts/saving_accounts.html">
+                        <form action="/employee-dashboard/savings-account" method="get" id="savingsE"></form>
+                        <a class="nav-link pages"onclick="document.getElementById('savingsE').submit()">
                             <i class="bi bi-people-fill"></i> Open Saving Accounts
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="current accounts/Current_accounts.html">
+                        <form action="/employee-dashboard/current-account" method="get" id="currentE"></form>
+                        <a class="nav-link pages" onclick="document.getElementById('currentE').submit()">
                             <i class="bi bi-person-add"></i> Open Current Accounts
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Transections/Transection.html">
+                        <form action="/employee-dashboard/fixedDeposit" method="get" id="FDE"></form>
+
+                        <a class="nav-link pages" onclick="document.getElementById('FDE').submit()">
                             <i class="bi bi-list-check"></i> Open FD Plans
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <form action="/employee-dashboard/openLoans" method="get" id="openLoanE"></form>
+
+                        <a class="nav-link pages" onclick="document.getElementById('openLoanE').submit()">
                             <i class="bi bi-list"></i> Open Loans
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-journal-check"></i> Onlin.Req. Loans 
-                            <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto"> 10</span>
                         </a>
                     </li>
                 </ul>
@@ -81,12 +82,13 @@
                 <!-- User (md) -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-person-square"></i> Account
+                        <a class="nav-link page" href="#">
+                            <i class="bi bi-person-square"></i> {{user}}
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
+                    <li class="nav-item pages">
+                        <form action="/employee-dashboard/logout" method="get" id="logout"></form>
+                        <a class="nav-link" onclick="document.getElementById('logout').submit();">
                             <i class="bi bi-box-arrow-left"></i> Logout
                         </a>
                     </li>
@@ -113,12 +115,11 @@
         </header>
         <!-- Main -->
     <!-- multistep form -->
-    <form id="msform">
+    <form id="msform" action="/employee-dashboard/fixedDeposit" method="post" id="details-form">
         <!-- progressbar -->
         <ul id="progressbar">
             <li class="active">Personal Details</li>
-            <li>Job Details</li>
-            <li>FD Details</li>
+            <li>Account Details</li>
         </ul>
         <!-- fieldsets -->
         <fieldset>
@@ -128,44 +129,44 @@
             <input type="text" name="lname" placeholder="Last Name" />
             <input type="text" name="phone" placeholder="Phone" />
             <input type="text" name="NIC" placeholder="NIC" />
-            <textarea name="address" placeholder="Address"></textarea>
             <input type="button" name="next" class="next action-button" value="Next" />
         </fieldset>
         <fieldset>
-            <h2 class="fs-title">Job Details</h2>
-            <h3 class="fs-subtitle">step 2</h3>
-            <input type="text" name="Occupation" placeholder="Occupation" />
-            <input type="text" name="Position" placeholder="Position" />
-            <input type="text" name="Salary" placeholder="Salary(RS.)" />
-            <input type="text" name="Income" placeholder="Net Monthly Income(With salary)" />
-            <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
-        <fieldset>
-            <h2 class="fs-title">FD Plan Details</h2>
-            <h3 class="fs-subtitle">Step 3</h3>
-            <input type="text" name="ID" placeholder="Saving Account No." />
-            <input type="text" name="amount" placeholder="FD Amount (LKR)" />
+            <h2 class="fs-title">Account Details</h2>
+            <h3 class="fs-subtitle">Step 2</h3>
+            <input type="text" name="accountNumber" placeholder="Saving Account Number" />
+            <input type="text" name="accountAmount" placeholder="LKR Amount"/>
             <div class="custom-select">
-                <label for="loanType">FD Plan</label>
-                <select name="loanType" class="loanType">
-                    <option value="personal">6 Months Fixed Deposits</option>
-                    <option value="home">12 Months Fixed Deposits</option>
-                    <option value="personal">36 Months Fixed Deposits</option>
+                <label for="fdType">Account Type</label>
+                <select name="fdType" class="loanType">
+                    <option value="1">6 months</option>
+                    <option value="2">12 months</option>
+                    <option value="3">36 months</option>
                 </select>
             </div>
+            
             <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <a href=".................." class="submit action-button" target="_top">Open</a>
+            <input type="submit" class="submit action-button" target="details-form" value="Create">
         </fieldset>
     </form>
+
+    <div>
+        {{#eq message "success"}}
+                <h6 class="alert alert-success mt-4">Successfully Created Account</h6>
+        {{else}}
+                {{#eq message "error"}}
+                    <h6 class="alert alert-danger mt-4"> Process Failed </h6>
+                {{/eq}}
+        {{/eq}}
+    </div>
     
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="\Employee\Employee\open FD plans\script.js"></script>
 
 
     </div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="\Employee\Employee\open FD plans\script.js"></script>
 </body>
 </html>

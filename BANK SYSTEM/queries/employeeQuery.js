@@ -56,16 +56,63 @@ exports.checkUser = (req,res)=>{
 
 exports.createSavings = (req,res,callback)=>{
     const content = req.body;
-    console.log(content);
 
     let fname = content.fname;
     let lname = content.lname;
-    let birthdate = content.birthdate;
+    let birthdate = content.birthDate;
     let NIC = content.NIC;
-    let address = content.addresss;
-    let branchID = content.branchID;
-    let accountType = content.accountType;
+    let address = content.address;
+    let branchID = parseInt(content.branchID);
+    let accountType = parseInt(content.accountType);
 
-    callback(res,null);     
+    con.query(`call employee_open_saving_account(?,?,?,?,?,?,?)`,[fname,lname,birthdate,NIC,address,branchID,accountType],(err,result)=>{
+        if(err){
+            console.log(err);
+            callback(res,"error")
+        } else{
+            callback(res,"success"); 
+        }
+    });
+    
+}
+
+exports.createCurrent = (req,res,callback)=>{
+    const content = req.body;
+
+    let fname = content.fname;
+    let lname = content.lname;
+    let birthdate = content.birthDate;
+    let NIC = content.NIC;
+    let address = content.address;
+    let branchID = parseInt(content.branchID);
+
+    con.query(`call employee_open_current_account(?,?,?,?,?,?)`,[fname,lname,birthdate,NIC,address,branchID],(err,result)=>{
+        if(err){
+            console.log(err);
+            callback(res,"error")
+        } else{
+            callback(res,"success"); 
+        }
+    });
+    
+}
+
+exports.createFD = (req,res,callback)=>{
+    const content = req.body;
+    console.log(req.body);
+    let NIC = content.NIC;
+    let savingAccountNo = content.accountNumber;
+    let fdAmount = parseInt(content.accountAmount);
+    let fdPlan = parseInt(content.fdType);
+
+    con.query(`call employee_open_fd(?,?,?,?)`,[NIC,savingAccountNo,fdAmount,fdPlan],(err,result)=>{
+        if(err){
+            console.log(err);
+            callback(res,"error")
+        } else{
+            callback(res,"success"); 
+        }
+    });
+    
 }
 

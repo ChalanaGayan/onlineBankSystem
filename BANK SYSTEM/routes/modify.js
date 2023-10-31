@@ -38,6 +38,25 @@ router.post("/employee-dashboard/savings-account", (req,res)=>{
     });
 });
 
+router.post("/employee-dashboard/current-account", (req,res)=>{
+    employeeQuery.createCurrent(req,res,(res,message)=>{
+        res.render("employee-dashboard/employee-dashboard-currentE",{user: res.user,message: message});
+    });
+});
+
+router.post("/employee-dashboard/fixedDeposit", (req,res)=>{
+    employeeQuery.createFD(req,res,(res,message)=>{
+        res.render("employee-dashboard/employee-dashboard-FDE",{user: res.user,message: message});
+    });
+});
+
+router.post("/employee-dashboard/openLoans", (req,res)=>{
+    employeeQuery.createFD(req,res,(res,message)=>{
+        res.render("employee-dashboard/employee-dashboard-FDE",{user: res.user,message: message});
+    });
+});
+
+
 
 
 

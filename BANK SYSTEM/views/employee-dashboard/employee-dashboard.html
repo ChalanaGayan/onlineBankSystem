@@ -47,14 +47,14 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <form action="/employee-dashboard" method="get" id="dashboard"></form>
+                        <a class="nav-link pages"onclick="document.getElementById('dashboard').submit()">
                             <i class="bi bi-house"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <form action="/employee-dashboard/savings-account" method="get" id="savingE"></form>
-
-                        <a class="nav-link pages"onclick="document.getElementById('savings-account').submit()">
+                        <form action="/employee-dashboard/savings-account" method="get" id="savingsE"></form>
+                        <a class="nav-link pages"onclick="document.getElementById('savingsE').submit()">
                             <i class="bi bi-people-fill"></i> Open Saving Accounts
                         </a>
                     </li>
@@ -76,14 +76,6 @@
 
                         <a class="nav-link pages" onclick="document.getElementById('openLoanE').submit()">
                             <i class="bi bi-list"></i> Open Loans
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <form action="/employee-dashboard/reqLoans" method="get" id="reqLoanE"></form>
-
-                        <a class="nav-link pages" onclick="document.getElementById('reqLoanE').submit()">
-                            <i class="bi bi-journal-check"></i> Online Request Loans 
-                            <span class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto"> 10</span>
                         </a>
                     </li>
                 </ul>
