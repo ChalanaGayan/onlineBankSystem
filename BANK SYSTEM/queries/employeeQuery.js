@@ -116,3 +116,27 @@ exports.createFD = (req,res,callback)=>{
     
 }
 
+exports.openLoan = (req,res,callback)=>{
+    const content = req.body;
+    console.log(req.body);
+
+    let fname = content.fname;
+    let lname = content.lname;
+    let birthdate = content.birthDate;
+    let NIC = content.NIC;
+    let address = content.address;
+    let loanAmount = parseInt(content.loanAmount);
+    let duration = parseInt(content.duration);
+    let comments = content.comments;
+
+    con.query(`call employee_loan_application(?,?,?,?,?,?,?,?)`,[fname,lname,birthdate,NIC,address,loanAmount,duration,comments],(err,result)=>{
+        if(err){
+            console.log(err);
+            callback(res,"error")
+        } else{
+            callback(res,"success"); 
+        }
+    });
+    
+}
+

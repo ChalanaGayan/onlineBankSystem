@@ -51,8 +51,8 @@ router.post("/employee-dashboard/fixedDeposit", (req,res)=>{
 });
 
 router.post("/employee-dashboard/openLoans", (req,res)=>{
-    employeeQuery.createFD(req,res,(res,message)=>{
-        res.render("employee-dashboard/employee-dashboard-FDE",{user: res.user,message: message});
+    employeeQuery.openLoan(req,res,(res,message)=>{
+        res.render("employee-dashboard/employee-dashboard-openLoanE",{user: res.user,message: message});
     });
 });
 
