@@ -140,3 +140,12 @@ exports.openLoan = (req,res,callback)=>{
     
 }
 
+exports.getTransactions = (callback)=>{
+    con.query(`call show_bankwise_transactions_report()`,(err,result)=>{
+        const transactions = result[0];
+        callback(transactions);
+    });
+    
+}
+
+
