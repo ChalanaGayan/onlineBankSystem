@@ -19,10 +19,14 @@ router.post("/register-user",async (req,res)=>{
 
 router.post("/customer-dashboard/loans",async (req,res)=>{
     let NIC = req.body.NIC;
+    let Account_No = parseInt(req.body.Account_No);
     let Amount = parseFloat(req.body.Amount);
     let Duration = parseInt(req.body.Duration);
     let loanType = req.body.loanType;
-    await customerQuery.addLoan(res,NIC,Amount,Duration,loanType);
+
+    customerQuery.addLoan(res,NIC,Account_No,Amount,Duration,loanType,(res,message)=>{
+        res.render("customer-dashboard/customer-dashboard-loans",{user:res.user, message:message});
+    });
 });
 
 router.post("/customer-dashboard/transactions", (req,res)=>{

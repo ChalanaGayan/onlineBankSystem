@@ -133,12 +133,12 @@ exports.getFixedDeposits = (username,callback)=>{
     });
 }
 
-exports.addLoan = (res,NIC,Amount,Duration,loanType)=>{
-    con.query(`CALL customer_loan_application(?,?,?,?)`,[NIC,Amount,Duration,loanType],(err,result)=>{
+exports.addLoan = (res,NIC,Account_No,Amount,Duration,loanType,callback)=>{
+    con.query(`CALL customer_loan_application(?,?,?,?,?)`,[NIC,,Account_No,Amount,Duration,loanType],(err,result)=>{
         if(result[0][0]["@status"]){
-            res.redirect("/customer-dashboard");
+            callback(res,"success");
         }else{
-            res.redirect("/customer-dashboard");
+            callback(res,"fail");
         }
         
     });
