@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 const dotenv = require("dotenv");
 const auth = require("../routes/employeeAuth");
+const authManager = require("../routes/managerAuth");
 
 dotenv.config();
 
@@ -30,18 +31,26 @@ exports.checkUser = (req,res)=>{
     con.query(`SELECT * FROM user_details WHERE User_Name=?`,[username],(err,result)=>{
         if (result[0]){
             if (checkPWD(result[0].Password,password)){
-                const token = auth.getToken(username); // This is where we create the access token at login
-                res.cookie("jwt",token,{
-                    //maxAge: 600000,
-                    httpOnly: true
-                })
 
                 // Check whether its a manager or an employee
                 con.query(`call get_Position(?)`,[username],(err,result)=>{
                     const position = result[0][0].Position;
                     console.log(position);
-                    if (position=="Manager"){res.redirect("employee-dashboard/manager");}
-                    else {res.redirect("employee-dashboard");}
+                    if (position=="Manager"){
+                        const token = authManager.getToken(username); // This is where we create the access token at login
+                        res.cookie("jwt",token,{
+                            //maxAge: 600000,
+                            httpOnly: true
+                        })
+                        res.redirect("employee-dashboard/manager");
+                    }else {
+                        const token = auth.getToken(username); // This is where we create the access token at login
+                        res.cookie("jwt",token,{
+                            //maxAge: 600000,
+                            httpOnly: true
+                        })
+                        res.redirect("employee-dashboard");
+                    }
                     
                 })
 
