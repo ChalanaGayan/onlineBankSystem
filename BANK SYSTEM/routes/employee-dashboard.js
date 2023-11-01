@@ -42,7 +42,10 @@ router.get("/manager", authManager.authUser, function (req, res) {
 });
 
 router.get("/workingEmployees", authManager.authUser, function (req, res) {
-    res.render("manager-dashboard/workingEmployees",{ user: res.user });
+    query.getEmployees((employees)=>{
+        res.render("manager-dashboard/workingEmployees",{ user: res.user,employees:employees });
+    }); 
+    
 });
 
 router.get("/addemployees", authManager.authUser, function (req, res) {
@@ -63,7 +66,10 @@ router.get("/late_loan_installment", authManager.authUser, function (req, res) {
 });
 
 router.get("/loan_request", authManager.authUser, function (req, res) {
-    res.render("manager-dashboard/loan_request",{ user: res.user });
+    query.getLoanRequests(res.user,(loans)=>{
+        res.render("manager-dashboard/loan_request",{ user: res.user, loans:loans });
+    });
+    
 });
 
 router.get("/manager_Setting", authManager.authUser, function (req, res) {

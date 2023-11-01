@@ -83,12 +83,13 @@
                 <!-- User (md) -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-person-square"></i> Account
+                        <a class="nav-link page" href="#">
+                            <i class="bi bi-person-square"></i> {{user}}
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
+                    <li class="nav-item pages">
+                        <form action="/employee-dashboard/logout" method="get" id="logout"></form>
+                        <a class="nav-link" onclick="document.getElementById('logout').submit();">
                             <i class="bi bi-box-arrow-left"></i> Logout
                         </a>
                     </li>
@@ -128,303 +129,38 @@
                                 <tr>
                                     <th scope="col">User ID</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Position</th>
-                                    <th scope="col">Work started date</th>
-                                    <th scope="col">Basic Monthly Salary</th>
+                                    <th scope="col">NIC</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Contact Number</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                {{#each employees}}
+                                <tr> 
                                     <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
+                                        <a class="text-heading font-semibold">
+                                            {{this.User_ID}}
                                         </a>
                                     </td>
                                     <td>
-                                        Neranjan
+                                        {{this.name}}
                                     </td>
                                     <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
+                                        <a class="text-heading font-semibold">
+                                            {{this.NIC}}
                                         </a>
                                     </td>
                                     <td>
-                                        2015/04/03
+                                        {{this.Email}}
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
+                                            {{this.Contact_No}}
                                         </span>
                                     </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Neranjan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Neranjan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Neranjan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Neranjan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Neranjan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Neranjan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Neranjan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Neranjan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="#">
-                                            11111111111111
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Neranjan
-                                    </td>
-                                    <td>
-                                        <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                            Cashier
-                                        </a>
-                                    </td>
-                                    <td>
-                                        2015/04/03
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            LKR 80,000.00
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                {{/each}}
                             </tbody>
                         </table>
                     </div>

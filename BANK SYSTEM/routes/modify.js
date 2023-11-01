@@ -60,6 +60,20 @@ router.post("/employee-dashboard/openLoans", (req,res)=>{
     });
 });
 
+/* Below code is regarding the manager dashboard */
+
+router.post("/employee-dashboard/loan_request", (req,res)=>{
+    employeeQuery.approveLoan(res.user,req,res,(res,message)=>{
+        res.render("manager-dashboard/loan_request",{user: res.user,message: message});
+    });
+});
+
+router.post("/employee-dashboard/addemployees",async (req,res)=>{
+    employeeQuery.addEmployee(req,(message)=>{
+        res.render("manager-dashboard/addemployees",{user:res.user, message:message});
+    });
+});
+
 
 
 module.exports = router;

@@ -163,4 +163,38 @@ exports.getLateLoans = (username,callback)=>{
     });   
 }
 
+exports.getLoanRequests = (username,callback)=>{
+    con.query(`call manager_display_not_approved_loans(?)`,[username],(err,result)=>{
+        const loans = result[0];
+        callback(loans);
+    });   
+}
+
+exports.approveLoan = (username,req,res,callback)=>{
+    const decision = parseInt(req.body.decision);
+    const loanID = parseInt(req.body.loanID);
+    con.query(`call manager_loan_approval(?,?,?)`,[username,decision,loanID],(err,result)=>{
+        console.log(err);
+        callback(res,null);
+    });   
+}
+
+exports.getEmployees = (callback)=>{
+    con.query(`call show_working_employees_details()`,(err,result)=>{
+        const employees = result[0];
+        callback(employees);
+    });   
+}
+
+exports.addEmployee = (req,callback)=>{
+    const { branchID, fname, lname, username, password, NIC, contactNo, email, gender } = req.body;
+    const branchIDAsInt = parseInt(branchID);
+    console.log(req.body);
+    con.query(`call manager_add_employee(?,?,?,?,?,?,?,?,?)`,[branchID,username,password,gender,NIC,email,contactNo,fname,lname],(err,result)=>{
+        if (err){console.log(err);callback("success");}
+        else{callback("fail");}
+        
+    });   
+}
+
 

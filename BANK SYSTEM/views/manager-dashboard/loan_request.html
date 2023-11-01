@@ -83,12 +83,13 @@
                 <!-- User (md) -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-person-square"></i> Account
+                        <a class="nav-link page" href="#">
+                            <i class="bi bi-person-square"></i> {{user}}
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
+                    <li class="nav-item pages">
+                        <form action="/employee-dashboard/logout" method="get" id="logout"></form>
+                        <a class="nav-link" onclick="document.getElementById('logout').submit();">
                             <i class="bi bi-box-arrow-left"></i> Logout
                         </a>
                     </li>
@@ -135,15 +136,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{#each transactions}}
-                                <tr> 
+                                {{#each loans}}
+                                <tr id="{{this.Loan_Detail_ID}}row"> 
                                     <td>
                                         <a class="text-heading font-semibold">
-                                            {{this.From_Branch}}
+                                            {{this.Loan_Detail_ID}}
                                         </a>
                                     </td>
                                     <td>
-                                        {{this.To_Branch}}
+                                        {{this.Loan_Type}}
                                     </td>
                                     <td>
                                         <a class="text-heading font-semibold">
@@ -151,17 +152,21 @@
                                         </a>
                                     </td>
                                     <td>
-                                        {{formatDate this.date}}
+                                        {{formatDate this.Starting_Date}}
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
-                                            {{this.time}}
+                                            {{this.Duration}}
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        
-                                        <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                        <form action="/employee-dashboard/loan_request" method="post" ID={{this.Loan_Detail_ID}}approve><input type="text" name="decision" value="1" hidden="true"/><input type="text" name="loanID" value="{{this.Loan_Detail_ID}}" hidden="true"/></form>
+                                        <form action="/employee-dashboard/loan_request" method="post" ID={{this.Loan_Detail_ID}}decline><input type="text" name="decision" value="0" hidden="true"/><input type="text" name="loanID" value="this.Loan_Detail_ID" hidden="true"/></form>
+                                        <button type="button" onclick="showSweetAlertApprove('{{this.Loan_Detail_ID}}approve')" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-check-square-fill"></i>
+                                        </button>
+                                        <button type="button" onclick="showSweetAlertDecline('{{this.Loan_Detail_ID}}decline')" class="btn btn-sm btn-square btn-danger text-danger-hover">
+                                            <i class="bi bi-ban"></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -176,6 +181,6 @@
     </div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="\Employee\manager\loan approvals\script.js"></script>
 </body>
 </html>
