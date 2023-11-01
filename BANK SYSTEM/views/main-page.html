@@ -12,10 +12,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="/styles/Section_2.css">
     <title>DPRJ Bank</title>
 </head>
+
 <body>
+  <style>
+    /* Add transitions to the welcome section */
+    #welcome-sec {
+      transition: all 0.5s ease-in-out;
+    }
+
+    /* Add hover effect to the Learn More button */
+    #more-button:hover {
+      color: #fff;
+      background-color: #007bff;
+    }
+
+    /* Add transitions to the animated text */
+    .animated-text span {
+      transition: all 0.5s ease-in-out;
+    }
+
+    /* Add hover effect to the login buttons */
+    .login button:hover {
+      color: #fff;
+      background-color: #007bff;
+    }
+  </style>
+
+    <style>
+      /* Add transitions to the navigation bar */
+      nav {
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Add transitions to the navigation links */
+      nav ul li a {
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Add hover effect to the navigation links */
+      nav ul li a:hover {
+        color: #fff;
+        background-color: #007bff;
+      }
+    </style>
+
     
     <nav>
       <input type="checkbox" id="check">
@@ -47,103 +90,102 @@
                 <form style="float:left" action="/employee-login" method="get" id="employee-login-direct">
                   <button style="margin-left: 10px; " class="btn btn-primary" type="submit" onclick="document.getElementById('employee-login-direct').submit()"> Employee Login </button>
                 </form>
-
             </div>
-          
         </div>
-
-
-    </section>
-
-    <section id ="section-2">
-
-        <h2 class="headline ">Products and services to make banking easy</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4 cards">
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card h-100">
-                <form id="savings-form" action="/savings" method="get">
-                <a onclick="document.getElementById('savings-form').submit()"><img src="	https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4940/media-230528021902.jpg" class="card-img-top" alt="savings"></a>
-                </form>
-                <div class="card-body">
-                  <h5 class="card-title">Saving Accounts</h5>
-                  <ul>
-                    <li>Easy access to your money</li>
-                    <li>Competitive interest rates</li>
-                    <li>Free online banking</li>
-                    <li>Free mobile banking</li>
-                    <li>Free eStatements</li>
-                  </ul>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"><a class="more-tag" href="/Bank services/savings/saving.html">more...></a></small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card h-100">
-                <a href="/Bank services/current accounts/current_accounts.html"><img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4943/media-230528022004.jpg" class="card-img-top" alt="current"></a>
-                <div class="card-body">
-                  <h5 class="card-title">Current Accounts</h5>
-                  <ul>
-                    <li>Easy access to your money</li>
-                    <li>Competitive interest rates</li>
-                    <li>Free online banking</li>
-                    <li>Free mobile banking</li>
-                    <li>Free eStatements</li>
-                  </ul>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"><a class="more-tag" href="/Bank services/current accounts/current_accounts.html">more...></a></small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card h-100">
-                  <a href="/Bank services/term depositd/term_deposits.html"><img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4946/media-230528022056.jpg" class="card-img-top" alt="FD"></a>
-                  <div class="card-body">
-                    <h5 class="card-title">Term Deposits</h5>
-                    <ul>
-                        <li>Guaranteed returns </li>
-                        <li>Flexible terms & maturity options</li>
-                        <li>Secure & low-risk investment</li>
-                        <li>Option for automatic renewal</li>
-                        <li>Fixed interest rate </li>
-                    </ul>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted"><a class="more-tag" href="/Bank services/term depositd/term_deposits.html">more...></a></small>
-                  </div>
-                </div>
-              </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card h-100">
-                <a href="/Bank services/loans/loan.html"><img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4955/media-230528023059.jpg" class="card-img-top" alt="Loan">
-                    <div class="card-body"></a>
-                  <h5 class="card-title">Loans</h5>
-                    <ul>
-                        <li>Personalized repayment plans</li>
-                        <li>No prepayment penalties</li>
-                        <li>Flexible loan options</li>
-                        <li>Fast approval and funding</li>
-                        <li>Online account management</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted"><a class="more-tag" href="/Bank services/loans/loan.html">more...></a></small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
     </section>
     
-    <section id="section-3">
+
+    
+    <section id="section-2">
+      <h2 class="headline">Products and services to make banking easy</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4 cards">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card h-100">
+            <a href="/Bank services/savings/saving.html">
+              <img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4940/media-230528021902.jpg" class="card-img-top" alt="savings">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Saving Accounts</h5>
+              <ul>
+                <li>Easy access to your money</li>
+                <li>Competitive interest rates</li>
+                <li>Free online banking</li>
+                <li>Free mobile banking</li>
+                <li>Free eStatements</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><a class="more-tag" href="/Bank services/savings/saving.html">more...></a></small>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card h-100">
+            <a href="/Bank services/current accounts/current_accounts.html">
+              <img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4943/media-230528022004.jpg" class="card-img-top" alt="current">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Current Accounts</h5>
+              <ul>
+                <li>Easy access to your money</li>
+                <li>Competitive interest rates</li>
+                <li>Free online banking</li>
+                <li>Free mobile banking</li>
+                <li>Free eStatements</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><a class="more-tag" href="/Bank services/current accounts/current_accounts.html">more...></a></small>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card h-100">
+            <a href="/Bank services/term depositd/term_deposits.html">
+              <img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4946/media-230528022056.jpg" class="card-img-top" alt="FD">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Term Deposits</h5>
+              <ul>
+                <li>Guaranteed returns </li>
+                <li>Flexible terms & maturity options</li>
+                <li>Secure & low-risk investment</li>
+                <li>Option for automatic renewal</li>
+                <li>Fixed interest rate </li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><a class="more-tag" href="/Bank services/term depositd/term_deposits.html">more...></a></small>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card h-100">
+            <a href="/Bank services/loans/loan.html">
+              <img src="https://s3.ap-southeast-1.amazonaws.com/static.boc.lk/4955/media-230528023059.jpg" class="card-img-top" alt="Loan">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Loans</h5>
+              <ul>
+                <li>Personalized repayment plans</li>
+                <li>No prepayment penalties</li>
+                <li>Flexible loan options</li>
+                <li>Fast approval and funding</li>
+                <li>Online account management</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><a class="more-tag" href="/Bank services/loans/loan.html">more...></a></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    
+    
+    <section id="section-3" style="background-color: #080145;">
         <h2 class="headline ">Currency Exchange Rates</h2>
         <div class="wrapper">
             <header>Currency Exchange</header>
@@ -170,7 +212,7 @@
                 </div>
               </div>
               <div class="exchange-rate">Getting exchange rate...</div>
-              <button style="background-color:#0d6efd; ">Get Exchange Rate</button>
+              <button style="background-color:#0d6efd; animation: pulse 1s infinite;">Get Exchange Rate</button>
             </form>
             
           </div>
