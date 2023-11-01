@@ -191,8 +191,8 @@ exports.addEmployee = (req,callback)=>{
     const branchIDAsInt = parseInt(branchID);
     console.log(req.body);
     con.query(`call manager_add_employee(?,?,?,?,?,?,?,?,?)`,[branchID,username,password,gender,NIC,email,contactNo,fname,lname],(err,result)=>{
-        if (err){console.log(err);callback("success");}
-        else{callback("fail");}
+        if (err){console.log(err);callback("fail");}
+        else{callback("success");}
         
     });   
 }
