@@ -24,7 +24,7 @@ router.post("/customer-dashboard/loans",async (req,res)=>{
     let Duration = parseInt(req.body.Duration);
     let loanType = req.body.loanType;
 
-    customerQuery.addLoan(res,NIC,Account_No,Amount,Duration,loanType,(res,message)=>{
+    customerQuery.addLoan(res,NIC,Amount,Duration,loanType,(res,message)=>{
         res.render("customer-dashboard/customer-dashboard-loans",{user:res.user, message:message});
     });
 });

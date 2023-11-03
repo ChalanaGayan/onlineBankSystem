@@ -38,10 +38,10 @@ exports.checkUser = (req,res)=>{
                 })
                 res.redirect("customer-dashboard");
             } else{
-                res.render("customer-dashboard/customer-login",{message: "Invalid Username or Password"});
+                res.render("customer-login",{message: "Invalid Username or Password"});
             }
         } else{
-            res.render("customer-dashboard/customer-login",{message: "Invalid Username or Password"});
+            res.render("customer-login",{message: "Invalid Username or Password"});
         }
     });
 }
@@ -133,8 +133,8 @@ exports.getFixedDeposits = (username,callback)=>{
     });
 }
 
-exports.addLoan = (res,NIC,Account_No,Amount,Duration,loanType,callback)=>{
-    con.query(`CALL customer_loan_application(?,?,?,?,?)`,[NIC,Account_No,Amount,Duration,loanType],(err,result)=>{
+exports.addLoan = (res,NIC,Amount,Duration,loanType,callback)=>{
+    con.query(`CALL customer_loan_application(?,?,?,?,?)`,[NIC,Amount,Duration,1,loanType],(err,result)=>{
         console.log(result[0][0]["@status"]);
         if(result[0][0]["@status"]){
             callback(res,"success");
