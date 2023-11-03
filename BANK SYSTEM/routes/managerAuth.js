@@ -1,0 +1,31 @@
+const jwt = require("jsonwebtoken");
+
+require("dotenv").config();
+
+// Middleware function to authenticate a manager using jwt token
+exports.authUser = (req,res,next)=>{
+    if (req.cookies.jwt){ // <= Remember it's req.cookies
+        try{
+        const verify = jwt.verify(req.cookies.jwt, process.env.ACCESS_TOKEN_SECRET_MANAGER);
+        res.user = verify.username;
+        } catch (err){
+            if(err instanceof jwt.JsonWebTokenError){
+                return res.redirect("/employee-login");
+            } else{
+                res.sendStatus(404);
+            }
+        } 
+        next();
+    } else{
+        res.clearCookie("jwt");
+        return res.redirect("/employee-login");
+    }
+    
+}
+
+exports.getToken = (username)=>{
+    const token = jwt.sign({username: username},process.env.ACCESS_TOKEN_SECRET_MANAGER,{expiresIn: "1h"});
+    return token;
+}
+
+module.exports;

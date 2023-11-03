@@ -84,12 +84,13 @@
                 <!-- User (md) -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-person-square"></i> Account
+                        <a class="nav-link page" href="#">
+                            <i class="bi bi-person-square"></i> {{user}}
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
+                    <li class="nav-item pages">
+                        <form action="/employee-dashboard/logout" method="get" id="logout"></form>
+                        <a class="nav-link" onclick="document.getElementById('logout').submit();">
                             <i class="bi bi-box-arrow-left"></i> Logout
                         </a>
                     </li>
@@ -125,57 +126,66 @@
               
               
               <h2>Add Users</h2>
-              <div class="form">
+              <form class="form" action="/employee-dashboard/addemployees" method="post">
                 <div class="card space icon-relative">
                   <label class="label">Branch ID</label>
-                  <input type="text" class="input" placeholder="Branch ID">
+                  <input type="text" class="input" placeholder="Branch ID" name="branchID">
                  
                 </div>
                 <div class="card space icon-relative">
                     <label class="label">First Name</label>
-                    <input type="text" class="input" placeholder="First Name">
+                    <input type="text" class="input" placeholder="First Name" name="fname">
                    
                   </div>
                   <div class="card space icon-relative">
                     <label class="label">Last Name</label>
-                    <input type="text" class="input"  placeholder="Last Name">
+                    <input type="text" class="input"  placeholder="Last Name" name="lname">
                   </div>
                 <div class="card space icon-relative">
                   <label class="label">User Name</label>
-                  <input type="text" class="input"  placeholder="User Name">
+                  <input type="text" class="input"  placeholder="User Name" name="username">
                 </div>
                 <div class="card space icon-relative">
                     <label class="label">Password</label>
-                    <input type="password" class="input"  placeholder="Password">
+                    <input type="password" class="input"  placeholder="Password" name="password">
                    
                 </div>
                 <div class="form">
                   <div class="card space icon-relative">
                     <label class="label">NIC</label>
-                    <input type="text" class="input" placeholder="NIC Number">
+                    <input type="text" class="input" placeholder="NIC Number" name="NIC">
                   </div>
                   <div class="card space icon-relative">
                     <label class="label">Contact No</label>
-                    <input type="text" class="input"  placeholder="Phone Number">
+                    <input type="text" class="input"  placeholder="Phone Number" name="contactNo">
                   </div>
                   <div class="card space icon-relative">
                       <label class="label">Email</label>
-                      <input type="text" class="input"  placeholder="Email"> 
+                      <input type="text" class="input"  placeholder="Email" name="email"> 
                   </div>
                   <div class="custom-select">
-                    <label for="loanType">Gender   </label>
-                    <select name="loanType" id="loanType">
-                        <option value="personal">Male</option>
-                        <option value="home">Female</option>
+                    <label for="gender">Gender   </label>
+                    <select name="gender" id="loanType">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                 </div>
                 <div class="btn">
-                    <button type="button" onclick="showSweetAlert()" >
+                    <button type="submit" >
                         Confirm 
                     </button>
+                </div>
+                <div>
+                    {{#eq message "success"}}
+                            <h6 class="alert alert-success mt-4">Successfully Added Employee</h6>
+                    {{else}}
+                            {{#eq message "fail"}}
+                                <h6 class="alert alert-danger mt-4"> Failed </h6>
+                            {{/eq}}
+                    {{/eq}}
                 </div> 
                 
-              </div>
+            </form>
             </div>
           </div>
     </div>

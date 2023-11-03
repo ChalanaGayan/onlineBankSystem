@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 const dotenv = require("dotenv");
 const auth = require("../routes/employeeAuth");
+const authManager = require("../routes/managerAuth");
 
 dotenv.config();
 
@@ -30,18 +31,26 @@ exports.checkUser = (req,res)=>{
     con.query(`SELECT * FROM user_details WHERE User_Name=?`,[username],(err,result)=>{
         if (result[0]){
             if (checkPWD(result[0].Password,password)){
-                const token = auth.getToken(username); // This is where we create the access token at login
-                res.cookie("jwt",token,{
-                    //maxAge: 600000,
-                    httpOnly: true
-                })
 
                 // Check whether its a manager or an employee
                 con.query(`call get_Position(?)`,[username],(err,result)=>{
                     const position = result[0][0].Position;
                     console.log(position);
-                    if (position=="Manager"){res.redirect("employee-dashboard/manager");}
-                    else {res.redirect("employee-dashboard");}
+                    if (position=="Manager"){
+                        const token = authManager.getToken(username); // This is where we create the access token at login
+                        res.cookie("jwt",token,{
+                            //maxAge: 600000,
+                            httpOnly: true
+                        })
+                        res.redirect("employee-dashboard/manager");
+                    }else {
+                        const token = auth.getToken(username); // This is where we create the access token at login
+                        res.cookie("jwt",token,{
+                            //maxAge: 600000,
+                            httpOnly: true
+                        })
+                        res.redirect("employee-dashboard");
+                    }
                     
                 })
 
@@ -151,6 +160,40 @@ exports.getLateLoans = (username,callback)=>{
     con.query(`call manager_display_late_loans(?)`,[username],(err,result)=>{
         const loans = result[0];
         callback(loans);
+    });   
+}
+
+exports.getLoanRequests = (username,callback)=>{
+    con.query(`call manager_display_not_approved_loans(?)`,[username],(err,result)=>{
+        const loans = result[0];
+        callback(loans);
+    });   
+}
+
+exports.approveLoan = (username,req,res,callback)=>{
+    const decision = parseInt(req.body.decision);
+    const loanID = parseInt(req.body.loanID);
+    con.query(`call manager_loan_approval(?,?,?)`,[username,decision,loanID],(err,result)=>{
+        console.log(err);
+        callback(res,null);
+    });   
+}
+
+exports.getEmployees = (callback)=>{
+    con.query(`call show_working_employees_details()`,(err,result)=>{
+        const employees = result[0];
+        callback(employees);
+    });   
+}
+
+exports.addEmployee = (req,callback)=>{
+    const { branchID, fname, lname, username, password, NIC, contactNo, email, gender } = req.body;
+    const branchIDAsInt = parseInt(branchID);
+    console.log(req.body);
+    con.query(`call manager_add_employee(?,?,?,?,?,?,?,?,?)`,[branchID,username,password,gender,NIC,email,contactNo,fname,lname],(err,result)=>{
+        if (err){console.log(err);callback("fail");}
+        else{callback("success");}
+        
     });   
 }
 

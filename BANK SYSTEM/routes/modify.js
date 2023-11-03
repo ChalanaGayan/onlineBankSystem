@@ -19,10 +19,14 @@ router.post("/register-user",async (req,res)=>{
 
 router.post("/customer-dashboard/loans",async (req,res)=>{
     let NIC = req.body.NIC;
+    let Account_No = parseInt(req.body.Account_No);
     let Amount = parseFloat(req.body.Amount);
     let Duration = parseInt(req.body.Duration);
     let loanType = req.body.loanType;
-    await customerQuery.addLoan(res,NIC,Amount,Duration,loanType);
+
+    customerQuery.addLoan(res,NIC,Account_No,Amount,Duration,loanType,(res,message)=>{
+        res.render("customer-dashboard/customer-dashboard-loans",{user:res.user, message:message});
+    });
 });
 
 router.post("/customer-dashboard/transactions", (req,res)=>{
@@ -53,6 +57,20 @@ router.post("/employee-dashboard/fixedDeposit", (req,res)=>{
 router.post("/employee-dashboard/openLoans", (req,res)=>{
     employeeQuery.openLoan(req,res,(res,message)=>{
         res.render("employee-dashboard/employee-dashboard-openLoanE",{user: res.user,message: message});
+    });
+});
+
+/* Below code is regarding the manager dashboard */
+
+router.post("/employee-dashboard/loan_request", (req,res)=>{
+    employeeQuery.approveLoan(res.user,req,res,(res,message)=>{
+        res.render("manager-dashboard/loan_request",{user: res.user,message: message});
+    });
+});
+
+router.post("/employee-dashboard/addemployees",async (req,res)=>{
+    employeeQuery.addEmployee(req,(message)=>{
+        res.render("manager-dashboard/addemployees",{user:res.user, message:message});
     });
 });
 

@@ -1,182 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">  
-    <meta name="description" content="This is the group project of Data Base & Management System">  
-    <meta name="author" content="Neranjan Pushpakumara">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
-    <link rel="stylesheet" href="\Bank services\loans\style.css">
-    <link rel="" href="/bank pic/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-    <title>Loans</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Accounts</title>
+  <link rel="stylesheet" href="\Customer After Login\Dashboard\current accounts\style.css">
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <style>
+    .pages:hover{
+        cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-        </label>
-        <a href="#"><img class="logo-image" src="\Bank services\loans\logo.png" alt="bank logo" ></a>
-        <ul>
-          <li><a class="active links" href="....">Home</a></li>
-          <li><a class="links" href="#section-3">Contact</a></li>
-          
-        </ul>
-      </nav>
-
-    <section id = "section-1">
-        <div >
-            <img id = "background-image" src="\Bank services\loans\bank-loans.jpg" alt="loan-image" >
-        </div>
-        <div id = "text-top-image" >
-            <h1>DPRJ Loans</h1>
-            <p>Explore our products designed to meet your financial requirements</p>
-        </div>
-
-
-    </section>
-
-    <section id="section-2">
-        <!-- <div class="editor-content">
-            <ul class="b">
-                <li >Ability to open joint account</li>
-                <li>ATM/Debit Card</li>
-                <li>DBRJ Smart Online Banking facility </li>
-                <li>Instant loans up to a maximum of 90% of your account balance</li>
-                <li>SMS alerts</li>
-                <li>24x7 banking at the Head Office branch</li>
-            </ul>
-        </div> -->
-
-
-
-    
-        <div>
-            <h1 id = "title-section2">Loans Categories</h1>
-            <div class="row row-cols-1 row-cols-md-3 g-4 cards " style="margin-left: 10%; margin-right :auto">
-                <div class="col-lg-6 col-md-12 col-sm-12">
-
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="\Bank services\loans\housing-Loans.jpg" class="img-fluid rounded-start saving-images" alt="children-saving">
-                          </div>
-                          <div class="col-md-8 " style="padding: 30px 0px ;background-color:gray">
-                            <div class="card-body">
-                              <h5 class="card-title">Housing Loans</h5>
-                              <a href=""><button type="button" class="btn btn-primary btn-lg button-more" style="background: none; border-color:blue">More Details</button></a>
-                              <form action="/customer-dashboard/loan-application" method="get" id="loan-form"></form>
-                              <a><button type="button" class="btn btn-primary btn-lg button-apply" onclick="document.getElementById('loan-form').submit()">Apply Now</button> </a>                 
-                            </div>
-                          </div>
+<!-- Dashboard -->
+<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+    <!-- Vertical Navbar -->
+    <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg" id="navbarVertical">
+        <div class="container-fluid">
+            <!-- Toggler -->
+            <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- username -->
+            <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
+                <h3 class="text-success"><img src="https://bytewebster.com/img/logo.png" width="40"><span class="text-info">Neranjan</span></h3> 
+            </a>
+            <!-- User menu (mobile) -->
+            <div class="navbar-user d-lg-none">
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <!-- Toggle -->
+                    <a href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar-parent-child">
+                            <img alt="Image Placeholder" src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar- rounded-circle">
+                            <span class="avatar-child avatar-badge bg-success"></span>
                         </div>
-                      </div>
+                    </a>
 
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
+            </div>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidebarCollapse">
+                <!-- Navigation -->
+                <ul class="navbar-nav">
+                    <li class="nav-item pages">
+                        <form action="/customer-dashboard" method="get" id="dashboard"></form>
+                        <a class="nav-link" onclick="document.getElementById('dashboard').submit()">
+                            <i class="bi bi-house"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item pages" >
+                        <form action="/customer-dashboard/savings-account" method="get" id="savings"></form>
+                        <a class="nav-link" onclick="document.getElementById('savings').submit()">
+                            <i class="bi bi-coin"></i> Saving Accounts
+                        </a>
+                        
+                    </li>
+                    <li class="nav-item pages">
+                        <form action="/customer-dashboard/current-account" method="get" id="current"></form>
+                        <a class="nav-link" onclick="document.getElementById('current').submit()">
+                            <i class="bi bi-cash-coin"></i> Current Accounts
+                        </a>
+                    </li>
+                    <li class="nav-item pages">
+                        <form action="/customer-dashboard/transactions" method="get" id="transactions"></form>
+                        <a class="nav-link" onclick="document.getElementById('transactions').submit()">
+                            <i class="bi bi-cash-stack"></i> Transactions
+                        </a>
+                    </li>
+                    <li class="nav-item pages">
+                        <form action="/customer-dashboard/loans" method="get" id="loans"></form>
+                        <a class="nav-link" onclick="document.getElementById('loans').submit()">
+                            <i class="bi bi-wallet-fill"></i> Loans
+                        </a>
+                    </li>
+                    <li class="nav-item pages">
+                        <form action="/customer-dashboard/fixed-deposit" method="get" id="term-deposits"></form>
+                        <a class="nav-link" onclick="document.getElementById('term-deposits').submit()">
+                            <i class="bi bi-briefcase-fill"></i> Term Deposits
+                        </a>
+                    </li>
+                </ul>
 
-                   <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="\Bank services\loans\Educational-Loans.jpg" class="img-fluid rounded-start saving-images" alt="Teen-saving">
-                          </div>
-                          <div class="col-md-8" style="padding: 30px 0px  ;background-color:gray">
-                            <div class="card-body">
-                              <h5 class="card-title">Educational Loans</h5>
-                              <a href=""><button type="button" class="btn btn-primary btn-lg button-more" style="background: none; border-color:blue">More Details</button></a>
-                              <a><button type="button" class="btn btn-primary btn-lg button-apply" onclick="document.getElementById('loan-form').submit()">Apply Now</button> </a>      
-                            </div>
-                          </div>
+                <!-- Push content down -->
+                <div class="mt-auto"></div>
+                <!-- User (md) -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person-square"></i>{{user}}
+                        </a>
+                    </li>
+                    <li class="nav-item pages">
+                        <form action="/customer-dashboard/logout" method="get" id="logout"></form>
+                        <a class="nav-link" onclick="document.getElementById('logout').submit();">
+                            <i class="bi bi-box-arrow-left"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+    <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+        <!-- Header -->
+        <header class="bg-surface-primary border-bottom pt-6">
+            <div class="container-fluid">
+                <div class="mb-npx">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                            <!-- Title -->
+                            <h1 class="h2 mb-0 ls-tight">
+                                <img src="\Customer After Login\Dashboard\current accounts\logo.png" width="40"> Digital Banking With DPRJ Bank </h1>
                         </div>
-                      </div>
-
+                    </div>
+                    <!-- Nav -->
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
+            </div>
+        </header>
+        <!-- Main -->
 
-                   <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="\Bank services\loans\pensioners'-Loans.jpg" class="img-fluid rounded-start saving-images" alt="Adult-saving">
-                          </div>
-                          <div class="col-md-8" style="padding: 30px 0px ;background-color:gray">
-                            <div class="card-body" >
-                              <h5 class="card-title">Pensioners' Loans</h5>
-                              <a href=""><button type="button" class="btn btn-primary btn-lg button-more" style="background: none; border-color:blue">More Details</button></a>
-                              <a><button type="button" class="btn btn-primary btn-lg button-apply" onclick="document.getElementById('loan-form').submit()">Apply Now</button> </a>   
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
-
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="\Bank services\loans\personal-loans.jpg" class="img-fluid rounded-start saving-images" alt="senior-saving">
-                          </div>
-                          <div class="col-md-8" style="padding: 30px 0px ;background-color:gray">
-                            <div class="card-body">
-                              <h5 class="card-title">Personal Loans</h5>
-                              <a href=""><button type="button" class="btn btn-primary btn-lg button-more" style="background: none; border-color:blue;">More Details</button></a>
-                              <a><button type="button" class="btn btn-primary btn-lg button-apply" onclick="document.getElementById('loan-form').submit()">Apply Now</button> </a>                                
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                </div>
-
-
+        <div id="headline">
+            <h1 style="text-align: center; padding:5% ;font-weight:bold">Apply for a Loan</h1>
         </div>
-    </section>
-
-</body>
-
-<footer>
-    <section id ="section-3">
-    
-    <div class="contact-container ">
-        
-        <div class="form-container  ">
-            
-            <form action="" class="form-container">
-
-                <h2 class="headline" style="color: white; text-align:center">Contact Us</h2>
-                <div class="input-group">
-                    <input type="text" placeholder="Name" required>                       
+        <main class="py-6 bg-surface-secondary">
+            <div class="container-fluid">
+                <!-- Card stats -->
+                <div class="card-body">
+                  <h5 class="card-title">You should have a Fixed Deposit to be eligible</h5>
+                  <form action="/customer-dashboard/loan-application" method="get" id="loan-form"></form>
+                  <a><button type="button" class="btn btn-primary btn-lg button-apply" onclick="document.getElementById('loan-form').submit()">Apply Now</button> </a>                 
                 </div>
-                <div class="input-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" placeholder="Subject" required>
-                </div>
-                <div class="input-group">
-                    <textarea placeholder="Message" required></textarea>
-                </div>
-                <div class="input-group">
-                    <button class="btn btn-primary " style="width: 100%;">Submit</button>
-                </div>
-            </form>
-        </div>
-        <div class="map ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7874587633573!2d79.89968427456903!3d6.7956951199413025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2454186608f23%3A0x1e4a36ca98dbbb88!2sUniversity%20of%20Moratuwa%2C%20Moratuwa%2010400!5e0!3m2!1sen!2slk!4v1696600695818!5m2!1sen!2slk"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-        </div>
-        <div >
-           
-        </div>
+            </div>
+        </main>
+        {{#eq message "success"}}
+        <h6 class="alert alert-success mt-4"> Successfully Placed </h6>
+        {{else}}
+          {{#eq message "fail"}}
+            <h6 class="alert alert-danger mt-4">Loan Placement Failed</h6>
+          {{else}}
+            {{#eq message "invalid"}}
+                <h6 class="alert alert-warning mt-4">Invalid Account</h6>
+            {{else}}
+                {{#eq message "invalidAmount"}}
+                    <h6 class="alert alert-danger mt-4">Check Your Funds</h6>
+                {{/eq}}
+            {{/eq}}
+          {{/eq}}
+        {{/eq}}
     </div>
-  </section>
-</footer>
-
-
-
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="\Customer After Login\Dashboard\current accounts\script.js"></script>
+</body>
 </html>
