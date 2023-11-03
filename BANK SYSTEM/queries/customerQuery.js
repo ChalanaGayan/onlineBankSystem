@@ -134,8 +134,8 @@ exports.getFixedDeposits = (username,callback)=>{
 }
 
 exports.addLoan = (res,NIC,Account_No,Amount,Duration,loanType,callback)=>{
-    con.query(`CALL customer_loan_application(?,?,?,?,?)`,[NIC,,Account_No,Amount,Duration,loanType],(err,result)=>{
-        console.log(err);
+    con.query(`CALL customer_loan_application(?,?,?,?,?)`,[NIC,Account_No,Amount,Duration,loanType],(err,result)=>{
+        console.log(result[0][0]["@status"]);
         if(result[0][0]["@status"]){
             callback(res,"success");
         }else{

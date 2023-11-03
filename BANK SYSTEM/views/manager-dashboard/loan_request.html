@@ -160,8 +160,8 @@
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <form action="/employee-dashboard/loan_request" method="post" ID={{this.Loan_Detail_ID}}approve><input type="text" name="decision" value="1" hidden="true"/><input type="text" name="loanID" value="{{this.Loan_Detail_ID}}" hidden="true"/></form>
-                                        <form action="/employee-dashboard/loan_request" method="post" ID={{this.Loan_Detail_ID}}decline><input type="text" name="decision" value="0" hidden="true"/><input type="text" name="loanID" value="this.Loan_Detail_ID" hidden="true"/></form>
+                                        <form action="/employee-dashboard/loan_request" method="post" ID={{this.Loan_Detail_ID}}approve><input type="text" name="decision" value="1" hidden="true"/><input type="text" name="loanID" value="{{this.Loan_Detail_ID}}" hidden="true"/><input type="text" name="username" value="{{user}}" hidden="true"/></form>
+                                        <form action="/employee-dashboard/loan_request" method="post" ID={{this.Loan_Detail_ID}}decline><input type="text" name="decision" value="0" hidden="true"/><input type="text" name="loanID" value="{{this.Loan_Detail_ID}}" hidden="true"/><input type="text" name="username" value="{{user}}" hidden="true"/></form>
                                         <button type="button" onclick="showSweetAlertApprove('{{this.Loan_Detail_ID}}approve')" class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                             <i class="bi bi-check-square-fill"></i>
                                         </button>

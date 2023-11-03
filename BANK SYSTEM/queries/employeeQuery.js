@@ -170,10 +170,13 @@ exports.getLoanRequests = (username,callback)=>{
     });   
 }
 
-exports.approveLoan = (username,req,res,callback)=>{
+exports.approveLoan = (req,res,callback)=>{
     const decision = parseInt(req.body.decision);
     const loanID = parseInt(req.body.loanID);
-    con.query(`call manager_loan_approval(?,?,?)`,[username,decision,loanID],(err,result)=>{
+    //const username = req.body.username;
+
+    //console.log(username);
+    con.query(`call manager_loan_approval(?,?,?)`,["User1",decision,loanID],(err,result)=>{
         console.log(err);
         callback(res,null);
     });   
