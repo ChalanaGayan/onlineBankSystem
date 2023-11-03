@@ -1,4 +1,43 @@
 
+/* Add transitions to the welcome section */
+#welcome-sec {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Add hover effect to the Learn More button */
+#more-button:hover {
+  color: #fff;
+  background-color: #007bff;
+}
+
+/* Add transitions to the animated text */
+.animated-text span {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Add hover effect to the login buttons */
+.login button:hover {
+  color: #fff;
+  background-color: #007bff;
+}
+
+
+/* Add transitions to the navigation bar */
+nav {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add transitions to the navigation links */
+nav ul li a {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add hover effect to the navigation links */
+nav ul li a:hover {
+  color: #fff;
+  background-color: #007bff;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
